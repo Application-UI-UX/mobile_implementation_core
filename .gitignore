@@ -10,3 +10,4 @@ bin
 .idea
 bazel-*
 local.properties
+target/
