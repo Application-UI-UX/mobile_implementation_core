@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.ros</groupId>
+  <artifactId>rosjava_core</artifactId>
+  <version>0.4.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Application-UI-UX Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/Application-UI-UX/rosjava_messages</url>
+    </repository>
+  </distributionManagement>
+
+
+  <developers>
+    <developer>
+      <name>Ronaldson Bellande</name>
+      <email>ronaldsonbellande@gmail.com</email>
+      <organization>com.github.Application-UI-UX</organization>
+      <organizationUrl>https://github.com/Application-UI-UX/rosjava_messages</organizationUrl>
+    </developer>
+  </developers>
+
+
+  <scm>
+    <connection>scm:git:git://github.com/Application-UI-UX/rosjava_messages.git</connection>
+    <developerConnection>scm:git:https://github.com/Application-UI-UX/rosjava_messages.git</developerConnection>
+    <url>https://github.com/Application-UI-UX/rosjava_messages</url>
+    <tag>rosjava_messages</tag>
+  </scm>
+
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>3.6.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+          <configuration>
+            <altDeploymentRepository>github::default::https://maven.pkg.github.com/Application-UI-UX/rosjava_messages</altDeploymentRepository>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+
+</project>
