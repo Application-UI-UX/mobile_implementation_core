@@ -2,6 +2,14 @@
 Changelog
 =========
 
+0.4.0 (2022-05-19)
+------------------
+* Update package.xml, CMakeList.txt for noetic branch
+* Update gradle and wapper to be up-to-date
+* Fix Bugs that has to do with the gradle building
+* Release version in github for easy access when building project
+* Contributors: Ronaldson Bellande
+
 0.3.7 (2019-01-22)
 ------------------
 * Gradle update to 4.10.2.

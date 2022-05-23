@@ -15,7 +15,7 @@
  */
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '4.10.2'
+  gradleVersion = '7.2'
 }
 
 buildscript {
@@ -23,29 +23,100 @@ buildscript {
 }
 
 apply plugin: "catkin"
+apply plugin: "maven-publish"
+apply plugin: "java"
 
 allprojects {
   group 'org.ros.rosjava_core'
   version = project.catkin.pkg.version
+
+  repositories {
+    maven {
+//      allowInsecureProtocol = true
+      url 'https://repo1.maven.org/maven2'
+      url = "https://maven.pkg.github.com/Application-UI-UX"
+    }
+    mavenLocal()
+    mavenCentral()
+    google()
+  }
 }
 
+//subprojects {
+//  if (name != 'docs') {
+//    /*
+//     * The ros plugin configures a few things:
+//     *
+//     *  - local deployment repository : where it dumps the jars and packaged artifacts)
+//     *  - local maven repositories    : where it finds your locally installed/built artifacts)
+//     *  - external maven repositories : where it goes looking if it can't find dependencies locally
+//     *
+//     * To modify, or add repos to the default external maven repositories list, pull request against this code:
+//     *
+//     *   https://github.com/rosjava/rosjava_bootstrap/blob/kinetic/gradle_plugins/src/main/groovy/org/ros/gradle_plugins/RosPlugin.groovy#L31
+//     */
+//    apply plugin: "ros-java"
+//    apply plugin: "osgi"
+//    apply plugin: "idea"
+//    apply plugin: "eclipse"
+//  }
+//}
 subprojects {
+  /*
+  * The android plugin configures a few things:
+  * plugins are published in Application-UI-UX and can be imported in any projects, to be used
+  * https://github.com/Application-UI-UX
+  */
   if (name != 'docs') {
-    /*
-     * The ros plugin configures a few things:
-     *
-     *  - local deployment repository : where it dumps the jars and packaged artifacts)
-     *  - local maven repositories    : where it finds your locally installed/built artifacts)
-     *  - external maven repositories : where it goes looking if it can't find dependencies locally
-     *
-     * To modify, or add repos to the default external maven repositories list, pull request against this code:
-     *
-     *   https://github.com/rosjava/rosjava_bootstrap/blob/kinetic/gradle_plugins/src/main/groovy/org/ros/gradle_plugins/RosPlugin.groovy#L31
-     */
     apply plugin: "ros-java"
     apply plugin: "osgi"
     apply plugin: "idea"
     apply plugin: "eclipse"
+  }
+
+  publishing {
+    repositories {
+      maven {
+        name = "rosjava_core"
+        url = uri("https://maven.pkg.github.com/Application-UI-UX/rosjava_core")
+        credentials {
+          username = project.findProperty("gpr.user") ?: System.getenv("RonaldsonBellande")
+          password = project.findProperty("gpr.key") ?: System.getenv("")
+        }
+      }
+
+      publications {
+        productionRelease(MavenPublication) {
+//          from components.productionRelease
+          groupId = 'org.ros'
+          artifactId = 'rosjava_core'
+          version = "0.4.0"
+          pom {
+            name = "android_core"
+            description = "Maven POM customization android core package"
+            url = "https://github.com/Application-UI-UX/rosjava_core"
+            licenses {
+              license {
+                name = "The Apache License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+              }
+            }
+            developers {
+              developer {
+                id = "RonaldsonBellande"
+                name = "Ronaldson Bellande"
+                email = "ronaldsonbellande@gmail.com"
+              }
+            }
+            scm {
+              connection = "scm:svn:https://github.com/Application-UI-UX/rosjava_core/"
+              developerConnection = "scm:svn:https://github.com/Application-UI-UX/rosjava_core/"
+              url = "https://github.com/Application-UI-UX/rosjava_core/"
+            }
+          }
+        }
+      }
+    }
   }
 }
 

@@ -13,8 +13,9 @@ In addition to the following documentation, rosjava_core makes liberal use of
 `Javadoc`_.
 
 .. _roscore:  http://ros.org/wiki/roscore
-.. _issues: https://github.com/rosjava/rosjava_core
+.. _issues: https://github.com/rosjava/rosjava_core or https://github.com/Application-UI-UX/rosjava_core
 .. _Javadoc: javadoc/index.html
+
 
 Contents:
 
