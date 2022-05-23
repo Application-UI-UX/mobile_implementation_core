@@ -22,7 +22,7 @@ Non-ROS Installation
 --------------------
 
 This java package no longer requires a ros environment to be installed. In this case,
-you simply need to clone the github repository
+you simply need to clone the github repository or you can use the publish link in Application-UI-UX
 
 .. code-block:: bash
 
