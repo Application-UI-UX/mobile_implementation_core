@@ -14,8 +14,9 @@
  * the License.
  */
 
-task wrapper(type: Wrapper) {
-  gradleVersion = '7.2'
+wrapper {
+  gradleVersion = "7.2.0"
+  distributionUrl = distributionUrl.replace("bin", "all")
 }
 
 buildscript {
@@ -24,6 +25,7 @@ buildscript {
     mavenLocal()
     mavenCentral()
     google()
+
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:7.2.0'
@@ -60,7 +62,6 @@ subprojects {
     apply plugin: "ros-java"
     apply plugin: "osgi"
     apply plugin: "idea"
-    apply plugin: "eclipse"
   }
 
   publishing {
