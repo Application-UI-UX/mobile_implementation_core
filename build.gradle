@@ -25,13 +25,11 @@ buildscript {
     mavenLocal()
     mavenCentral()
     google()
-
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:7.2.0'
   }
 }
-
 
 apply plugin: "catkin"
 apply plugin: "maven-publish"
@@ -58,11 +56,14 @@ subprojects {
   * plugins are published in Application-UI-UX and can be imported in any projects, to be used
   * https://github.com/Application-UI-UX
   */
+  System.out.print(name+"\n");
+
   if (name != 'docs') {
-    apply plugin: "ros-java"
-    apply plugin: "osgi"
+//    apply plugin: "ros-java"
+//    apply plugin: "osgi"
     apply plugin: "idea"
   }
+  
 
   publishing {
     repositories {

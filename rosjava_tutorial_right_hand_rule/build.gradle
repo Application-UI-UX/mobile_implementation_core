@@ -19,7 +19,8 @@ apply plugin: 'application'
 mainClassName = 'org.ros.RosRun'
 
 dependencies {
-  compile project(':rosjava')
-  compile 'org.ros.rosjava_messages:sensor_msgs:[1.12,1.13)'
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation project(':rosjava')
+  implementation 'org.ros.rosjava_messages:sensor_msgs:[1.12,1.13)'
 }
 
