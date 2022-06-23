@@ -32,13 +32,3 @@ dependencies {
   testImplementation 'junit:junit:4.8.2'
   testImplementation 'org.mockito:mockito-all:1.8.5'
 }
-
-jar {
-  manifest {
-    version = project.version
-    symbolicName = 'org.ros.rosjava'
-    instruction 'Export-Package', '!org.ros.internal.*, org.ros.*'
-    instruction 'Private-Package', 'org.ros.internal.*'
-  }
-}
-
