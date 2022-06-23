@@ -121,5 +121,8 @@ apply from: project.file('rosjava_tutorial_pubsub/build.gradle')
 apply from: project.file('rosjava_tutorial_right_hand_rule/build.gradle')
 apply from: project.file('rosjava_tutorial_services/build.gradle')
 
+include ':apache_xmlrpc_common'
+
+project(':apache_xmlrpc_common').projectDir = file('rosjava_core/apache_xmlrpc_client')
 
 defaultTasks 'publish', 'installDist'
