@@ -17,9 +17,12 @@
  * under the License.    
  */
 package org.apache.xmlrpc.client;
-
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.XmlRpcRequest;
+import java.applet.Applet;
+
+// Contribution: Ronaldson Bellande
+// Maintainer: Ronaldson Bellande
 
 
 /**
@@ -40,10 +43,11 @@ import org.apache.xmlrpc.XmlRpcRequest;
  *   }
  * </pre>
  */
-public class TimingOutCallback implements AsyncCallback {
+
+public class TimingOutCallback extends Applet implements AsyncCallback {
     /** This exception is thrown, if the request times out.
      */
-    public static class TimeoutException extends XmlRpcException {
+    public static class TimeoutException extends XmlRpcException  {
         private static final long serialVersionUID = 4875266372372105081L;
 
         /** Creates a new instance with the given error code and
