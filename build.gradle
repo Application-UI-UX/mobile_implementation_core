@@ -25,13 +25,11 @@ buildscript {
     mavenLocal()
     mavenCentral()
     google()
-
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:7.2.0'
   }
 }
-
 
 apply plugin: "catkin"
 apply plugin: "maven-publish"
@@ -59,10 +57,11 @@ subprojects {
   * https://github.com/Application-UI-UX
   */
   if (name != 'docs') {
-    apply plugin: "ros-java"
-    apply plugin: "osgi"
+//    apply plugin: "ros-java"
+//    apply plugin: "osgi"
     apply plugin: "idea"
   }
+  
 
   publishing {
     repositories {
@@ -109,5 +108,21 @@ subprojects {
     }
   }
 }
+
+apply from: project.file('apache_xmlrpc_client/build.gradle')
+apply from: project.file('apache_xmlrpc_common/build.gradle')
+apply from: project.file('apache_xmlrpc_server/build.gradle')
+apply from: project.file('rosjava/build.gradle')
+apply from: project.file('rosjava_benchmarks/build.gradle')
+apply from: project.file('rosjava_geometry/build.gradle')
+apply from: project.file('rosjava_helpers/build.gradle')
+apply from: project.file('rosjava_test/build.gradle')
+apply from: project.file('rosjava_tutorial_pubsub/build.gradle')
+apply from: project.file('rosjava_tutorial_right_hand_rule/build.gradle')
+apply from: project.file('rosjava_tutorial_services/build.gradle')
+
+include ':apache_xmlrpc_common'
+
+project(':apache_xmlrpc_common').projectDir = file('rosjava_core/apache_xmlrpc_client')
 
 defaultTasks 'publish', 'installDist'

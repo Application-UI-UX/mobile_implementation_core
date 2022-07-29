@@ -19,6 +19,7 @@ apply plugin: 'application'
 mainClassName = 'org.ros.RosRun'
 
 dependencies {
-  compile project(':rosjava')
-  compile 'junit:junit:4.8.2'
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation project(':rosjava')
+  implementation 'junit:junit:4.8.2'
 }

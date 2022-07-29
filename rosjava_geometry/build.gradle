@@ -15,6 +15,7 @@
  */
 
 dependencies {
-  compile project(':rosjava')
-  testCompile 'junit:junit:4.8.2'
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation project(':rosjava')
+  testImplementation 'junit:junit:4.8.2'
 }
