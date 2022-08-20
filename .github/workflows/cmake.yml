@@ -1,0 +1,35 @@
+name: CMake
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Configure CMake 1
+      run: cmake -E make_directory ${{runner.workspace}}/build
+      
+          
+    - name: Install dependencies
+      shell: bash
+      run: sudo apt-get update ; sudo apt-get install <system_requirements.txt ; sudo apt-get install <ros_requirements.txt ;
+        python3 -m pip install -r requirements.txt
+            
+
+    - name: Build 1
+      run: cmake -E  make_directory --build ${{runner.workspace}}/build --config ${{env.BUILD_TYPE}
+ 
+ 
+    - name: Test 1
+      working-directory: ${{runner.workspace}}/build
+      run: ctest -C $BUILD_TYPE --output-on-failure
+      
