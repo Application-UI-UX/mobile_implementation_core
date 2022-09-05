@@ -9,6 +9,6 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/ronaldsonbellande-hplaptop/Desktop/User_Interface_Experience/rosjava_core/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH='/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/usr/local/cuda-11.0/lib64'
-export PATH='/opt/ros/noetic/bin:/home/ronaldsonbellande-hplaptop/.local/bin:/opt/gradle/gradle-7.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
+export PATH='/opt/ros/noetic/bin:/home/ronaldsonbellande-hplaptop/.local/share/nvim/lsp_servers/cmake/venv/bin:/home/ronaldsonbellande-hplaptop/.local/bin:/opt/gradle/gradle-7.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
 export ROSLISP_PACKAGE_DIRECTORIES='/home/ronaldsonbellande-hplaptop/Desktop/User_Interface_Experience/rosjava_core/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/ronaldsonbellande-hplaptop/Desktop/User_Interface_Experience/rosjava_core:$ROS_PACKAGE_PATH"
