@@ -64,11 +64,10 @@ allprojects {
 }
 
 subprojects {
-  apply plugin: 'java'
-  apply plugin: 'maven-publish'
-  apply plugin: "idea"
-  apply plugin: "eclipse"
 
+  if (name != 'docs') {
+    apply plugin: "idea"
+  }
   sourceCompatibility = 1.6
   targetCompatibility = 1.6
 
@@ -81,17 +80,5 @@ subprojects {
     }
   }
 }
-
-apply from: project.file('apache_xmlrpc_client/build.gradle')
-apply from: project.file('apache_xmlrpc_common/build.gradle')
-apply from: project.file('apache_xmlrpc_server/build.gradle')
-apply from: project.file('rosjava/build.gradle')
-apply from: project.file('rosjava_benchmarks/build.gradle')
-apply from: project.file('rosjava_geometry/build.gradle')
-apply from: project.file('rosjava_helpers/build.gradle')
-apply from: project.file('rosjava_test/build.gradle')
-apply from: project.file('rosjava_tutorial_pubsub/build.gradle')
-apply from: project.file('rosjava_tutorial_right_hand_rule/build.gradle')
-apply from: project.file('rosjava_tutorial_services/build.gradle')
 
 defaultTasks 'publish', 'installDist'
