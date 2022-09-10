@@ -33,7 +33,9 @@ rootProject.buildscript {
         maven { url = "https://jcenter.bintray.com" }
         google()
     }
-    dependencies {
-        implementation 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
-    }
+}
+dependencies {
+    implementation 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
+    implementation 'org.apache.commons:com.springsource.org.apache.commons.httpclient:3.1.0'
+    implementation 'org.apache.ws.commons:ws-commons-util:1.0.1'
 }
