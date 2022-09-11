@@ -33,7 +33,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 
-/** A SAX parser for an {@link org.apache.xmlrpc.server.XmlRpcServer}'s
+/** A SAX parser for an {org.apache.xmlrpc.server.XmlRpcServer}'s
  * response.
  */
 public class XmlRpcResponseParser extends RecursiveTypeParserImpl {

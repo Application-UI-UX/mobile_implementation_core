@@ -45,7 +45,7 @@ import org.apache.xmlrpc.util.ThreadPool;
  * requests per physical connection) nor chunked mode (in other words,
  * it cannot stream requests).</p>
  * <p>If you still insist in using the {@link WebServer}, it is
- * recommended to use its subclass, the {@link ServletWebServer} instead,
+ * recommended to use its subclass, the {ServletWebServer} instead,
  * which offers a minimal subset of the servlet API. In other words,
  * you keep yourself the option to migrate to a real servlet engine
  * later.</p>
