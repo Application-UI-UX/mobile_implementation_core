@@ -36,9 +36,9 @@ public interface XmlRpcListableHandlerMapping extends XmlRpcHandlerMapping {
      * <code>system.listMethods</code>, which is specified
      * as follows:
      * <cite>
-     *   <p>This method may be used to enumerate the methods implemented
-     *   by the XML-RPC server.</p>
-     *   <p>The <code>system.listMethods</code> method requires no
+     *   This method may be used to enumerate the methods implemented
+     *   by the XML-RPC server.
+     *   The <code>system.listMethods</code> method requires no
      *   parameters. It returns an array of strings, each of which is
      *   the name of a method implemented by the server.
      * </cite>
@@ -55,36 +55,35 @@ public interface XmlRpcListableHandlerMapping extends XmlRpcHandlerMapping {
      */
     String[] getListMethods() throws XmlRpcException;
 
-    /** This method implements the introspection method
+    /* This method implements the introspection method
      * <code>system.methodSignature</code>, which is specified
      * as follows:
 	 * <cite>
-	 *   <p>This method takes one parameter, the name of a method
+	 *   This method takes one parameter, the name of a method
 	 *    implemented by the XML-RPC server. It returns an array
 	 *    of possible signatures for this method. A signature is
 	 *    an array of types. The first of these types is the return
-	 *    type of the method, the rest are parameters.</p>
-	 *   <p>Multiple signatures (ie. overloading) are permitted:
+	 *    type of the method, the rest are parameters.
+	 *   Multiple signatures (ie. overloading) are permitted:
 	 *    this is the reason that an array of signatures are returned
-	 *    by this method.</p>
-	 *   <p>Signatures themselves are restricted to the top level
+	 *    by this method.
+	 *   Signatures themselves are restricted to the top level
 	 *    parameters expected by a method. For instance if a method
 	 *    expects one array of structs as a parameter, and it returns
 	 *    a string, its signature is simply "string, array". If it
 	 *    expects three integers, its signature is
-	 *    "string, int, int, int".</p>
-	 *   <p>If no signature is defined for the method, a none-array
+	 *    "string, int, int, int".
+	 *   If no signature is defined for the method, a none-array
 	 *    value is returned. Therefore this is the way to test for a
 	 *    non-signature, if $resp below is the response object from
 	 *    a method call to system.methodSignature:
-	 *    <pre>
+	 *
 	 *      $v=$resp->value();
 	 *      if ($v->kindOf()!="array") {
 	 *        // then the method did not have a signature defined
 	 *      }
-	 *    </pre>
 	 *    See the introspect.php demo included in this distribution
-	 *    for an example of using this method.</p>
+	 *    for an example of using this method.
 	 * </cite>
 	 * @see XmlRpcMetaDataHandler#getSignatures()
      */
@@ -93,14 +92,12 @@ public interface XmlRpcListableHandlerMapping extends XmlRpcHandlerMapping {
     /** This method implements the introspection method
      * <code>system.methodSignature</code>, which is specified
      * as follows:
-	 * <cite>
-	 *   <p>This method takes one parameter, the name of a
+	 *   This method takes one parameter, the name of a
 	 *     method implemented by the XML-RPC server. It
 	 *     returns a documentation string describing the
 	 *     use of that method. If no such string is available,
-	 *     an empty string is returned.</p>
-	 *   <p>The documentation string may contain HTML markup.</p>
-	 * </cite>
+	 *     an empty string is returned.
+	 *   The documentation string may contain HTML markup.
      */
     String getMethodHelp(String pHandlerName) throws XmlRpcException;
 }

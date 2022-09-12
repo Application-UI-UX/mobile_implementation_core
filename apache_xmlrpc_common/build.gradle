@@ -15,8 +15,14 @@
  */
 
 dependencies {
-  implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation 'org.apache.commons:com.springsource.org.apache.commons.httpclient:3.1.0'
-  implementation 'org.apache.ws.commons:ws-commons-util:1.0.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.3'
+    implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.3'
+    annotationProcessor 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.3'
+    annotationProcessor 'org.glassfish.jaxb:jaxb-runtime:2.3.3'
+    annotationProcessor 'javax.annotation:javax.annotation-api:1.3.2'
+    implementation 'org.apache.commons:com.springsource.org.apache.commons.httpclient:3.1.0'
+    implementation 'org.apache.ws.commons:ws-commons-util:1.0.1'
 }
 

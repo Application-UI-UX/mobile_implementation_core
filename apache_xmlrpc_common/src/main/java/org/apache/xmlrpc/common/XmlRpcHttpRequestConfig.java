@@ -22,7 +22,7 @@ import org.apache.xmlrpc.common.XmlRpcHttpConfig;
 import org.apache.xmlrpc.common.XmlRpcStreamRequestConfig;
 
 
-/** Extension of {@link org.apache.xmlrpc.client.XmlRpcClientConfig}
+/** Extension of {org.apache.xmlrpc.client.XmlRpcClientConfig}
  * for HTTP based transport. Provides details like server URL,
  * user credentials, and so on.
  */

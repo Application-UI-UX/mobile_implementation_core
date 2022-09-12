@@ -15,8 +15,8 @@
  */
 rootProject.name = 'rosjava_core'
 
-include 'apache_xmlrpc_client',
-        'apache_xmlrpc_common',
+include 'apache_xmlrpc_common',
+        'apache_xmlrpc_client',
         'apache_xmlrpc_server',
         'rosjava',
         'rosjava_geometry',
@@ -25,6 +25,6 @@ include 'apache_xmlrpc_client',
         'rosjava_helpers',
         'rosjava_tutorial_pubsub',
         'rosjava_tutorial_right_hand_rule',
-        'rosjava_tutorial_services',
-        'docs'
+        'rosjava_tutorial_services'
+//        'docs'
 

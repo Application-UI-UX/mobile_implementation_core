@@ -29,7 +29,7 @@
   <build_export_depend>tf2_msgs</build_export_depend>
 
 
-  <exec_depend>rosjava_build_tools</exec_depend>
+  <run_depend>rosjava_build_tools</run_depend>
   <exec_depend>rosjava_bootstrap</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>nav_msgs</exec_depend>

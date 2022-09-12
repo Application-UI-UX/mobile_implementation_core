@@ -14,113 +14,53 @@
  * the License.
  */
 
+/*
+Maintainer
+Ronaldson Bellande
+*/
+
 wrapper {
   gradleVersion = "7.2.0"
   distributionUrl = distributionUrl.replace("bin", "all")
 }
 
-buildscript {
-  apply from: "https://github.com/Application-UI-UX/rosjava_bootstrap/raw/noetic/buildscript.gradle"
-  repositories {
-    mavenLocal()
-    mavenCentral()
-    google()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:7.2.0'
-  }
-}
-
-apply plugin: "catkin"
-apply plugin: "maven-publish"
-apply plugin: "java"
-
 allprojects {
-  group 'org.ros.rosjava_core'
-  version = project.catkin.pkg.version
-
+  group="com.github.rosjava_core"
+  version = "0.4.0"
   repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
     maven {
       url 'https://repo1.maven.org/maven2'
       url = "https://maven.pkg.github.com/Application-UI-UX"
     }
     mavenLocal()
-    mavenCentral()
+    maven { url = "https://repo.maven.apache.org/maven2" }
+    maven { url = "https://jcenter.bintray.com" }
     google()
   }
 }
 
 subprojects {
-  /*
-  * The android plugin configures a few things:
-  * plugins are published in Application-UI-UX and can be imported in any projects, to be used
-  * https://github.com/Application-UI-UX
-  */
+  apply plugin: 'java'
+  apply plugin: 'maven-publish'
+  apply plugin: "idea"
+
   if (name != 'docs') {
-//    apply plugin: "ros-java"
-//    apply plugin: "osgi"
     apply plugin: "idea"
   }
-  
 
-  publishing {
-    repositories {
-      maven {
-        name = "rosjava_core"
-        url = uri("https://maven.pkg.github.com/Application-UI-UX/rosjava_core")
-        credentials {
-          username = project.findProperty("gpr.user") ?: System.getenv("RonaldsonBellande")
-          password = project.findProperty("gpr.key") ?: System.getenv("")
-        }
-      }
+  sourceCompatibility = 1.6
+  targetCompatibility = 1.6
 
-      publications {
-        productionRelease(MavenPublication) {
-//          from components.productionRelease
-          groupId = 'org.ros'
-          artifactId = 'rosjava_core'
-          version = "0.4.0"
-          pom {
-            name = "android_core"
-            description = "Maven POM customization android core package"
-            url = "https://github.com/Application-UI-UX/rosjava_core"
-            licenses {
-              license {
-                name = "The Apache License, Version 2.0"
-                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
-              }
-            }
-            developers {
-              developer {
-                id = "RonaldsonBellande"
-                name = "Ronaldson Bellande"
-                email = "ronaldsonbellande@gmail.com"
-              }
-            }
-            scm {
-              connection = "scm:svn:https://github.com/Application-UI-UX/rosjava_core/"
-              developerConnection = "scm:svn:https://github.com/Application-UI-UX/rosjava_core/"
-              url = "https://github.com/Application-UI-UX/rosjava_core/"
-            }
-          }
-        }
-      }
+  repositories {
+    maven {
+      url "https://repository.springsource.com/maven/bundles/release"
+    }
+    maven {
+      url "https://repository.springsource.com/maven/bundles/external"
     }
   }
 }
 
-apply from: project.file('apache_xmlrpc_client/build.gradle')
-apply from: project.file('apache_xmlrpc_common/build.gradle')
-apply from: project.file('apache_xmlrpc_server/build.gradle')
-apply from: project.file('rosjava/build.gradle')
-apply from: project.file('rosjava_benchmarks/build.gradle')
-apply from: project.file('rosjava_geometry/build.gradle')
-apply from: project.file('rosjava_helpers/build.gradle')
-apply from: project.file('rosjava_test/build.gradle')
-apply from: project.file('rosjava_tutorial_pubsub/build.gradle')
-apply from: project.file('rosjava_tutorial_right_hand_rule/build.gradle')
-apply from: project.file('rosjava_tutorial_services/build.gradle')
-
-include ':apache_xmlrpc_common'
-project(':apache_xmlrpc_common').projectDir = file('rosjava_core/apache_xmlrpc_client')
 defaultTasks 'publish', 'installDist'

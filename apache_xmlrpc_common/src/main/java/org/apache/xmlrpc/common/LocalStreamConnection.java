@@ -26,7 +26,7 @@ import java.io.OutputStream;
 
 /** Implementation of {@link ServerStreamConnection} for
  * use by the
- * {@link org.apache.xmlrpc.client.XmlRpcLocalStreamTransport}.
+ * {org.apache.xmlrpc.client.XmlRpcLocalStreamTransport}.
  */
 public class LocalStreamConnection {
     private class LocalServerStreamConnection implements ServerStreamConnection {
