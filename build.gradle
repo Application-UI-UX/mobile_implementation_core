@@ -46,9 +46,10 @@ subprojects {
   apply plugin: 'maven-publish'
   apply plugin: "idea"
 
-//  if (name != 'docs') {
-//    apply plugin: "idea"
-//  }
+  if (name != 'docs') {
+    apply plugin: "idea"
+  }
+
   sourceCompatibility = 1.6
   targetCompatibility = 1.6
 
