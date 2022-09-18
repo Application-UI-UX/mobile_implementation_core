@@ -23,9 +23,8 @@ dependencies {
   implementation 'org.apache.commons:com.springsource.org.apache.commons.logging:1.1.1'
   implementation 'org.apache.commons:com.springsource.org.apache.commons.net:2.0.0'
   implementation 'com.google.guava:guava:12.0'
-
-  implementation 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
   implementation 'com.github.Application-UI-UX:rosjava_messages:0.4.0'
+  implementation 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
 
   testImplementation 'junit:junit:4.8.2'
   testImplementation 'org.mockito:mockito-all:1.8.5'

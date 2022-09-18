@@ -16,14 +16,14 @@
 
 import org.apache.tools.ant.filters.ReplaceTokens
 
-task javadoc(type: Javadoc) {
-  def javaProjects = rootProject.subprojects.findResults {
-    (it.name != 'docs' && !it.name.startsWith('apache')) ? it : null
-  }
-  source javaProjects.collect { it.sourceSets.main.allJava }
-  classpath = files(javaProjects.collect { it.sourceSets.main.compileClasspath })
-  destinationDir = new File("${buildDir}/html", 'javadoc')
-}
+//task javadoc(type: Javadoc) {
+//  def javaProjects = rootProject.subprojects.findResults {
+//    (it.name != 'docs' && !it.name.startsWith('apache')) ? it : null
+//  }
+//  source javaProjects.collect { it.sourceSets.main.allJava }
+//  classpath = files(javaProjects.collect { it.sourceSets.main.compileClasspath })
+//  destinationDir = new File("${buildDir}/html", 'javadoc')
+//}
 
 task copySphinxConf(type: Copy) {
   from('src/main/sphinx/conf.py.in') {
@@ -37,10 +37,10 @@ task docs(type: Exec, dependsOn: [copySphinxConf, javadoc]) {
   commandLine 'make', 'html'
 }
 
-task clean {
-  doLast {
-    ant.delete dir: 'build'
-    ant.delete file: 'src/main/sphinx/conf.py'
-  }
-}
+//task clean {
+//  doLast {
+//    ant.delete dir: 'build'
+//    ant.delete file: 'src/main/sphinx/conf.py'
+//  }
+//}
 

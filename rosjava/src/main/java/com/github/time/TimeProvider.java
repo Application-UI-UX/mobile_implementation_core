@@ -20,11 +20,9 @@ import com.github.message.Time;
 
 /**
  * Provide time.
- *
  * @author kwc@willowgarage.com (Ken Conley)
  */
 public interface TimeProvider {
-
   /**
    * @return the current time of the system using rostime
    */

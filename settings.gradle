@@ -25,6 +25,6 @@ include 'apache_xmlrpc_common',
         'rosjava_helpers',
         'rosjava_tutorial_pubsub',
         'rosjava_tutorial_right_hand_rule',
-        'rosjava_tutorial_services'
-//        'docs'
+        'rosjava_tutorial_services',
+        'docs'
 
