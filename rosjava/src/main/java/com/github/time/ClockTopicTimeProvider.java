@@ -57,7 +57,8 @@ public class ClockTopicTimeProvider implements TimeProvider {
 
   @Override
   public Time getCurrentTime() {
-    // When using simulation time, the ROS Time API will return time=0 until it has received a
+    // When using simulation time, the ROS Time API will return time=0 until it has
+    // received a
     // message from the /clock topic.
     if (clock == null) {
       return new Time();

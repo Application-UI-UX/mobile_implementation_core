@@ -8,6 +8,8 @@ project(rosjava_core)
 find_package(
   catkin REQUIRED
   rosjava_build_tools
+  rosjava_messages
+
   geometry_msgs
   nav_msgs
   rosjava_test_msgs

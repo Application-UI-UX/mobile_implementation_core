@@ -45,7 +45,7 @@ public class NtpTimeProvider implements TimeProvider {
   private static final Log log = LogFactory.getLog(NtpTimeProvider.class);
 
   private int sampleSize = 11;
-  
+
   private final InetAddress host;
   private final ScheduledExecutorService scheduledExecutorService;
   private final WallTimeProvider wallTimeProvider;
@@ -56,7 +56,7 @@ public class NtpTimeProvider implements TimeProvider {
 
   /**
    * @param host
-   *          the NTP host to use
+   *             the NTP host to use
    */
   public NtpTimeProvider(InetAddress host, ScheduledExecutorService scheduledExecutorService) {
     this.host = host;
@@ -77,12 +77,12 @@ public class NtpTimeProvider implements TimeProvider {
     List<Long> offsets = Lists.newArrayList();
     int failures = 0;
     for (int i = 0; i < sampleSize; i++) {
-      try { 
-    	  offsets.add(computeOffset());
+      try {
+        offsets.add(computeOffset());
       } catch (IOException e) {
-    	  if (++failures > sampleSize / 2) {
-            throw e;
-    	  }
+        if (++failures > sampleSize / 2) {
+          throw e;
+        }
       }
     }
     offset = CollectionMath.median(offsets);
@@ -117,22 +117,21 @@ public class NtpTimeProvider implements TimeProvider {
    * not rethrown.
    * 
    * @param period
-   *          time between updates
+   *               time between updates
    * @param unit
-   *          unit of period
+   *               unit of period
    */
   public void startPeriodicUpdates(long period, TimeUnit unit) {
-    scheduledFuture =
-        scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
-          @Override
-          public void run() {
-            try {
-              updateTime();
-            } catch (IOException e) {
-              log.error("Periodic NTP update failed.", e);
-            }
-          }
-        }, 0, period, unit);
+    scheduledFuture = scheduledExecutorService.scheduleAtFixedRate(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          updateTime();
+        } catch (IOException e) {
+          log.error("Periodic NTP update failed.", e);
+        }
+      }
+    }, 0, period, unit);
   }
 
   /**
@@ -153,6 +152,7 @@ public class NtpTimeProvider implements TimeProvider {
   /**
    * Sets how many samples will be taken from the NTP server
    * when calling {@link #updateTime()}.
+   * 
    * @param sampleSize Number of samples to take. It has to be > 0.
    */
   public void setUpdateTimeSampleSize(int sampleSize) {

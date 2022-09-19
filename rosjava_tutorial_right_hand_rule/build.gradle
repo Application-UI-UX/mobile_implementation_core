@@ -21,6 +21,5 @@ mainClassName = 'org.ros.RosRun'
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation project(':rosjava')
-  implementation 'org.ros.rosjava_messages:sensor_msgs:[1.12,1.13)'
 }
 

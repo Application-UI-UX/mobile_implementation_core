@@ -13,6 +13,12 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
+/*
+Maintainer
+Ronaldson Bellande
+*/
+
 rootProject.name = 'rosjava_core'
 
 include 'apache_xmlrpc_common',
@@ -25,6 +31,5 @@ include 'apache_xmlrpc_common',
         'rosjava_helpers',
         'rosjava_tutorial_pubsub',
         'rosjava_tutorial_right_hand_rule',
-        'rosjava_tutorial_services'
-//        'docs'
-
+        'rosjava_tutorial_services',
+        'docs'

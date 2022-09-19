@@ -25,14 +25,13 @@ wrapper {
 }
 
 allprojects {
-  group="com.github.rosjava_core"
+  group="com.github.Application-UI-UX"
   version = "0.4.0"
   repositories {
     mavenCentral()
     maven { url "https://jitpack.io" }
     maven {
       url 'https://repo1.maven.org/maven2'
-      url = "https://maven.pkg.github.com/Application-UI-UX"
     }
     mavenLocal()
     maven { url = "https://repo.maven.apache.org/maven2" }
