@@ -37,4 +37,5 @@ rootProject.buildscript {
 dependencies {
     implementation 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
     implementation 'com.github.Application-UI-UX:rosjava_messages:0.4.0'
+    implementation 'com.github.Application-UI-UX:rosjava_bootstrap:0.4.0'
 }

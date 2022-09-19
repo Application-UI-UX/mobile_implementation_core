@@ -24,18 +24,18 @@ Typically ROS nodes are synonymous with processes. In rosjava, however, nodes
 are more like :roswiki:`nodelet`\s in that many nodes can run in a single
 process, the Java VM.
 
-Users, like yourself, do not create :javadoc:`org.ros.node.Node`\s. Instead,
-programs are defined as implementations of :javadoc:`org.ros.node.NodeMain`
-which are executed by the aptly named :javadoc:`org.ros.node.NodeMainExecutor`.
+Users, like yourself, do not create :javadoc:`com.github.node.Node`\s. Instead,
+programs are defined as implementations of :javadoc:`com.github.node.NodeMain`
+which are executed by the aptly named :javadoc:`com.github.node.NodeMainExecutor`.
 
-Let's consider the following mostly empty :javadoc:`org.ros.node.NodeMain`
+Let's consider the following mostly empty :javadoc:`com.github.node.NodeMain`
 implementation:
 
 .. code-block:: java
 
-  import org.ros.namespace.GraphName;
-  import org.ros.node.Node;
-  import org.ros.node.NodeMain;
+  import com.github.namespace.GraphName;
+  import com.github.node.Node;
+  import com.github.node.NodeMain;
 
   public class MyNode implements NodeMain {
 
@@ -61,50 +61,50 @@ implementation:
     }
   }
 
-The :javadoc:`org.ros.node.NodeMain#getDefaultNodeName()` method returns the
+The :javadoc:`com.github.node.NodeMain#getDefaultNodeName()` method returns the
 default name of the node. This name will be used unless a node name is
-specified in the :javadoc:`org.ros.node.NodeConfiguration` (more on that
-later). :javadoc:`org.ros.namespace.GraphName`\s are used throughout rosjava
+specified in the :javadoc:`com.github.node.NodeConfiguration` (more on that
+later). :javadoc:`com.github.namespace.GraphName`\s are used throughout rosjava
 when refering to nodes, topics, and parameters. Most methods which accept a
-:javadoc:`org.ros.namespace.GraphName` will also accept a string for
+:javadoc:`com.github.namespace.GraphName` will also accept a string for
 convenience.
 
-The :javadoc:`org.ros.node.NodeListener#onStart(org.ros.node.ConnectedNode)`
+The :javadoc:`com.github.node.NodeListener#onStart(com.github.node.ConnectedNode)`
 method is the entry point for your program (or node). The
-:javadoc:`org.ros.node.ConnectedNode` parameter is the factory we use to build
-things like :javadoc:`org.ros.topic.Publisher`\s and
-:javadoc:`org.ros.topic.Subscriber`\s.
+:javadoc:`com.github.node.ConnectedNode` parameter is the factory we use to build
+things like :javadoc:`com.github.topic.Publisher`\s and
+:javadoc:`com.github.topic.Subscriber`\s.
 
-The :javadoc:`org.ros.node.NodeListener#onShutdown(org.ros.node.Node)` method is
+The :javadoc:`com.github.node.NodeListener#onShutdown(com.github.node.Node)` method is
 the first exit point for your program. It will be executed as soon as shutdown
 is started (i.e. before all publishers, subscribers, etc. have been shutdown).
 The shutdown of all created publishers, subscribers, etc. will be delayed until
 this method returns or the shutdown timeout expires.
 
-The :javadoc:`org.ros.node.NodeListener#onShutdownComplete(org.ros.node.Node)`
+The :javadoc:`com.github.node.NodeListener#onShutdownComplete(com.github.node.Node)`
 method is the final exit point for your program. It will be executed after all
 publishers, subscribers, etc. have been shutdown. This is the preferred place
 to handle clean up since it will not delay shutdown.
 
-The :javadoc:`org.ros.node.NodeListener#onError(org.ros.node.Node,
+The :javadoc:`com.github.node.NodeListener#onError(com.github.node.Node,
 java.lang.Throwable)` method is called when an error occurs in the
-:javadoc:`org.ros.node.Node` itself. These errors are typically fatal.  The
-:javadoc:`org.ros.node.NodeListener#onShutdown(org.ros.node.Node)` and
-:javadoc:`org.ros.node.NodeListener#onShutdownComplete(org.ros.node.Node)`
+:javadoc:`com.github.node.Node` itself. These errors are typically fatal.  The
+:javadoc:`com.github.node.NodeListener#onShutdown(com.github.node.Node)` and
+:javadoc:`com.github.node.NodeListener#onShutdownComplete(com.github.node.Node)`
 methods will be called following the call to
-:javadoc:`org.ros.node.NodeListener#onError(org.ros.node.Node,
+:javadoc:`com.github.node.NodeListener#onError(com.github.node.Node,
 java.lang.Throwable)`.
 
 Publishers and subscribers
 --------------------------
 
-The following class (:javadoc:`org.ros.rosjava_tutorial_pubsub.Talker`) is
+The following class (:javadoc:`com.github.rosjava_tutorial_pubsub.Talker`) is
 available from the rosjava_tutorial_pubsub package. In this example, we create
 a publisher for the chatter topic. This should feel relatively familiar if
-you're a ROS veteran. The :javadoc:`org.ros.topic.Publisher` publishes
+you're a ROS veteran. The :javadoc:`com.github.topic.Publisher` publishes
 ``std_msgs.String`` messages to the ``/chatter`` topic.
 
-.. literalinclude:: ../../../../rosjava_tutorial_pubsub/src/main/java/org/ros/rosjava_tutorial_pubsub/Talker.java
+.. literalinclude:: ../../../../rosjava_tutorial_pubsub/src/main/java/com.github/rosjava_tutorial_pubsub/Talker.java
   :language: java
   :linenos:
   :lines: 17-
@@ -112,43 +112,43 @@ you're a ROS veteran. The :javadoc:`org.ros.topic.Publisher` publishes
 
 Line 28 will probably feel unfamailiar even to ROS veterans. This is one
 example of rosjava's asynchornous API. The intent of our
-:javadoc:`org.ros.rosjava_tutorial_pubsub.Talker` class is to publish a hello
+:javadoc:`com.github.rosjava_tutorial_pubsub.Talker` class is to publish a hello
 world message to anyone who will listen once per second. One way to accomplish
 this is to publish the message and sleep in a loop. However, we don't want to
-block the :javadoc:`org.ros.node.NodeListener#onStart(org.ros.node.Node)`
-method. So, we create a :javadoc:`org.ros.concurrent.CancellableLoop` and ask
-the :javadoc:`org.ros.node.Node` to execute it. The loop will be interrupted
-automatically when the :javadoc:`org.ros.node.Node` exits.
+block the :javadoc:`com.github.node.NodeListener#onStart(com.github.node.Node)`
+method. So, we create a :javadoc:`com.github.concurrent.CancellableLoop` and ask
+the :javadoc:`com.github.node.Node` to execute it. The loop will be interrupted
+automatically when the :javadoc:`com.github.node.Node` exits.
 
 On line 38 we create a new ``std_msgs.String`` message to publish using the
-:javadoc:`org.ros.node.topic.Publisher#newMessage()` method. Messages in
+:javadoc:`com.github.node.topic.Publisher#newMessage()` method. Messages in
 rosjava cannot be instantiated directly. More on that later.
 
-Now lets take a look at the :javadoc:`org.ros.rosjava_tutorial_pubsub.Listener`
+Now lets take a look at the :javadoc:`com.github.rosjava_tutorial_pubsub.Listener`
 class.
 
-.. literalinclude:: ../../../../rosjava_tutorial_pubsub/src/main/java/org/ros/rosjava_tutorial_pubsub/Listener.java
+.. literalinclude:: ../../../../rosjava_tutorial_pubsub/src/main/java/com.github/rosjava_tutorial_pubsub/Listener.java
   :language: java
   :linenos:
   :lines: 17-
   :emphasize-lines: 27-32
 
 In lines 27-32 we see another example of rosjava's asynchornous API. We can add
-as many :javadoc:`org.ros.message.MessageListener`\s to our
-:javadoc:`org.ros.node.topic.Subscriber` as we like. When a new message is
-received, all of our :javadoc:`org.ros.message.MessageListener`\s will be
+as many :javadoc:`com.github.message.MessageListener`\s to our
+:javadoc:`com.github.node.topic.Subscriber` as we like. When a new message is
+received, all of our :javadoc:`com.github.message.MessageListener`\s will be
 called with the incoming message as an argument to
-:javadoc:`org.ros.message.MessageListener#onNewMessage(T)`.
+:javadoc:`com.github.message.MessageListener#onNewMessage(T)`.
 
 Executing nodes
 ---------------
 
-When packaging your application into jar, you can use :javadoc:`org.ros.RosRun`
-as the main class. :javadoc:`org.ros.RosRun` provides a
-:javadoc:`org.ros.node.NodeMainExecutor` and a command line interface that will
+When packaging your application into jar, you can use :javadoc:`com.github.RosRun`
+as the main class. :javadoc:`com.github.RosRun` provides a
+:javadoc:`com.github.node.NodeMainExecutor` and a command line interface that will
 be familiar to ROS veterans. For example, the following steps will build and
-execute the :javadoc:`org.ros.rosjava_tutorial_pubsub.Talker` and
-:javadoc:`org.ros.rosjava_tutorial_pubsub.Listener` nodes in separate
+execute the :javadoc:`com.github.rosjava_tutorial_pubsub.Talker` and
+:javadoc:`com.github.rosjava_tutorial_pubsub.Listener` nodes in separate
 processes:
 
 .. code-block:: bash
@@ -157,8 +157,8 @@ processes:
   roscd rosjava_core/rosjava_tutorial_pubsub
   ../gradlew installDist
   roscore &
-  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub org.ros.rosjava_tutorial_pubsub.Talker &
-  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub org.ros.rosjava_tutorial_pubsub.Listener
+  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Talker &
+  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Listener
 
 .. note:: The above example launches roscore and the Talker node in the
   background. You could instead launch each in a separate terminal. Also, you
@@ -179,8 +179,8 @@ the default topic /chatter to /foo.
 
 .. code-block:: bash
 
-  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub org.ros.rosjava_tutorial_pubsub.Talker chatter:=/foo &
-  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub org.ros.rosjava_tutorial_pubsub.Listener chatter:=/foo
+  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Talker chatter:=/foo &
+  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Listener chatter:=/foo
 
 See :roswiki:`Remapping%20Arguments` for more information on passing arguments
 to ROS executables.
@@ -192,28 +192,28 @@ to ROS executables.
 Services
 --------
 
-The following class (:javadoc:`org.ros.rosjava_tutorial_services.Server`) is
+The following class (:javadoc:`com.github.rosjava_tutorial_services.Server`) is
 available from the rosjava_tutorial_services package. In this example, we
-create a :javadoc:`org.ros.node.service.ServiceServer` for the
+create a :javadoc:`com.github.node.service.ServiceServer` for the
 ``rosjava_test_msgs.AddTwoInts`` service. This should feel relatively familiar if you're
 a ROS veteran.
 
-.. literalinclude:: ../../../../rosjava_tutorial_services/src/main/java/org/ros/rosjava_tutorial_services/Server.java
+.. literalinclude:: ../../../../rosjava_tutorial_services/src/main/java/com.github/rosjava_tutorial_services/Server.java
   :language: java
   :linenos:
   :lines: 17-
   :emphasize-lines: 29
 
-The :javadoc:`org.ros.node.service.ServiceResponseBuilder` is called
+The :javadoc:`com.github.node.service.ServiceResponseBuilder` is called
 asynchronously for each incoming request. On line 29 we modify the response
 output parameter to contain the sum of the two integers in the request. The
 response will be sent once the
-:javadoc:`org.ros.node.service.ServiceResponseBuilder#build(T, S)` returns.
+:javadoc:`com.github.node.service.ServiceResponseBuilder#build(T, S)` returns.
 
-Now lets take a look at the :javadoc:`org.ros.rosjava_tutorial_services.Client`
+Now lets take a look at the :javadoc:`com.github.rosjava_tutorial_services.Client`
 class.
 
-.. literalinclude:: ../../../../rosjava_tutorial_services/src/main/java/org/ros/rosjava_tutorial_services/Client.java
+.. literalinclude:: ../../../../rosjava_tutorial_services/src/main/java/com.github/rosjava_tutorial_services/Client.java
   :language: java
   :linenos:
   :lines: 17-
@@ -221,13 +221,13 @@ class.
 
 In lines 36-47 we see another example of rosjava's asynchornous API. When the
 response is received, our
-:javadoc:`org.ros.node.service.ServiceResponseListener` will be called with the
+:javadoc:`com.github.node.service.ServiceResponseListener` will be called with the
 incoming response as an argument to
-:javadoc:`org.ros.node.service.ServiceResponseListener#onSuccess(T)`. In the
-event that the server thows a :javadoc:`org.ros.exception.ServiceException`
+:javadoc:`com.github.node.service.ServiceResponseListener#onSuccess(T)`. In the
+event that the server thows a :javadoc:`com.github.exception.ServiceException`
 while building the response,
-:javadoc:`org.ros.node.service.ServiceResponseListener#onFailure(RemoteException)`
-will be called. The :javadoc:`org.ros.exception.RemoteException` will contain
+:javadoc:`com.github.node.service.ServiceResponseListener#onFailure(RemoteException)`
+will be called. The :javadoc:`com.github.exception.RemoteException` will contain
 the error message from the server.
 
 Building and executing these nodes works in the same manner as described above:
@@ -238,8 +238,8 @@ Building and executing these nodes works in the same manner as described above:
   roscd rosjava_core/rosjava_tutorial_pubsub
   ../gradlew installDist
   roscore &
-  ./build/install/rosjava_tutorial_services/bin/rosjava_tutorial_services org.ros.rosjava_tutorial_services.Server &
-  ./build/install/rosjava_tutorial_services/bin/rosjava_tutorial_services org.ros.rosjava_tutorial_services.Client
+  ./build/install/rosjava_tutorial_services/bin/rosjava_tutorial_services com.github.rosjava_tutorial_services.Server &
+  ./build/install/rosjava_tutorial_services/bin/rosjava_tutorial_services com.github.rosjava_tutorial_services.Client
 
 At this point, you should see the log message "2 + 2 = 4" appear in your
 terminal. You can also access the service using the :roswiki:`rosservice`
@@ -259,8 +259,8 @@ Messages
 
 Messages are defined as interfaces. Since this makes it impossible to
 instantiate the message directly, it's necessary to use a
-:javadoc:`org.ros.message.MessageFactory` or helper methods such as
-:javadoc:`org.ros.node.topic.Publisher#newMessage()`. This indirection allows
+:javadoc:`com.github.message.MessageFactory` or helper methods such as
+:javadoc:`com.github.node.topic.Publisher#newMessage()`. This indirection allows
 the underlying message implementation to change in the future. ::
 
   Node node;
@@ -281,15 +281,15 @@ rosjava offers full access to the ROS :roswiki:`Parameter Server`. The
 accessible to all the nodes at runtime. It is meant to store configuration
 parameters that are easy to inspect and modify.
 
-Parameters are accessible via :javadoc:`org.ros.node.parameter.ParameterTree`\s
-(provided by :javadoc:`org.ros.node.Node`\s). ::
+Parameters are accessible via :javadoc:`com.github.node.parameter.ParameterTree`\s
+(provided by :javadoc:`com.github.node.Node`\s). ::
 
   ParameterTree params = node.newParameterTree();
 
 Accessing Parameters
 ~~~~~~~~~~~~~~~~~~~~
 
-The :javadoc:`org.ros.node.parameter.ParameterTree` API allows you to set and
+The :javadoc:`com.github.node.parameter.ParameterTree` API allows you to set and
 query lists, maps, and single objects of integers, strings and floats.
 
 Unlike typical ROS :roswiki:`Client Libraries`, rosjava requires that the type
@@ -316,7 +316,7 @@ Using a ParameterListener
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is also possible to subscribe to a particular parameter using a
-:javadoc:`org.ros.node.parameter.ParameterListener`. Note that this does not
+:javadoc:`com.github.node.parameter.ParameterListener`. Note that this does not
 work for parameter subtrees. ::
 
   params.addParameterListener("/foo/bar", new ParameterListener() {
@@ -333,8 +333,8 @@ Logging
 -------
 
 The logging interface for rosjava is accessed through
-:javadoc:`org.ros.node.Node` objects via the
-:javadoc:`org.ros.node.Node#getLog()` method. This object returns an `Apache
+:javadoc:`com.github.node.Node` objects via the
+:javadoc:`com.github.node.Node#getLog()` method. This object returns an `Apache
 Commons Log`_ object which handles the debug, info, error, warning, and fatal
 logging outputs for ROS. ::
 

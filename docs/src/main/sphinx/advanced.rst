@@ -6,10 +6,10 @@ Listeners
 
 Because rosjava provides a primarily asynchronous API, many classes which allow
 you to provide event listeners. For example,
-:javadoc:`org.ros.node.topic.PublisherListener`\s allow you to react to
-lifecycle events of a :javadoc:`org.ros.node.topic.Publisher`. The snippet
-below adds a :javadoc:`org.ros.node.topic.PublisherListener` that will log a
-warning message if the :javadoc:`org.ros.node.topic.Publisher` fails to
+:javadoc:`com.github.node.topic.PublisherListener`\s allow you to react to
+lifecycle events of a :javadoc:`com.github.node.topic.Publisher`. The snippet
+below adds a :javadoc:`com.github.node.topic.PublisherListener` that will log a
+warning message if the :javadoc:`com.github.node.topic.Publisher` fails to
 register with the master. ::
 
   Node node;
@@ -29,7 +29,7 @@ Messages as BLOBs
 
 If you need to deserialize a ROS message BLOB, it is important to remember that
 Java is a big endian virtual machine. When supplying the ``ByteBuffer`` to the
-:javadoc:`org.ros.message.MessageDeserializer`, make sure that order is set to
+:javadoc:`com.github.message.MessageDeserializer`, make sure that order is set to
 little endian. ::
 
   Node node;

@@ -167,14 +167,19 @@ public class RemoteUptimeClock {
    * measuredRemoteUptime.
    * 
    * @param timeProvider
-   *          the local time provider
+   *                                             the local time provider
    * @param callable
-   *          returns the current remote uptime in arbitrary units
+   *                                             returns the current remote uptime
+   *                                             in arbitrary units
    * @param driftSensitivity
-   *          the sensitivity to drift adjustments, must be in the range [0, 1]
+   *                                             the sensitivity to drift
+   *                                             adjustments, must be in the range
+   *                                             [0, 1]
    * @param errorReductionCoefficientSensitivity
-   *          the sensitivity to error reduction coefficient adjustments, must
-   *          be in the range [0, 1]
+   *                                             the sensitivity to error
+   *                                             reduction coefficient
+   *                                             adjustments, must
+   *                                             be in the range [0, 1]
    * @return a new {@link RemoteUptimeClock}
    */
   public static RemoteUptimeClock newDefault(final TimeProvider timeProvider,
@@ -201,8 +206,7 @@ public class RemoteUptimeClock {
     this.callable = callable;
     this.driftSensitivity = driftSensitivity;
     this.errorReductionCoefficientSensitivity = errorReductionCoefficientSensitivity;
-    latencyOutlierFilter =
-        new LatencyOutlierFilter(latencyOutlierFilterSampleSize, latencyOutlierFilterThreshold);
+    latencyOutlierFilter = new LatencyOutlierFilter(latencyOutlierFilterSampleSize, latencyOutlierFilterThreshold);
     errorReductionCoefficient = 0;
   }
 
@@ -212,9 +216,10 @@ public class RemoteUptimeClock {
    * to include more than 100 uptime ticks will give reasonable results.
    * 
    * @param sampleSize
-   *          the number of samples to use for calibration
+   *                            the number of samples to use for calibration
    * @param samplingDelayMillis
-   *          the delay in milliseconds between collecting each sample
+   *                            the delay in milliseconds between collecting each
+   *                            sample
    */
   public void calibrate(int sampleSize, double samplingDelayMillis) {
     log.info("Starting calibration...");
@@ -254,11 +259,15 @@ public class RemoteUptimeClock {
    * @see #drift
    * 
    * @param localUptimeDelta
-   *          the delta between the two local uptimes that correspond to the two
-   *          remote uptimes used to determine {@code remoteUptimeDelta}
+   *                          the delta between the two local uptimes that
+   *                          correspond to the two
+   *                          remote uptimes used to determine
+   *                          {@code remoteUptimeDelta}
    * @param remoteUptimeDelta
-   *          the delta between the two remote uptimes that correspond to the
-   *          two local uptimes used to determine {@code localUptimeDelta}
+   *                          the delta between the two remote uptimes that
+   *                          correspond to the
+   *                          two local uptimes used to determine
+   *                          {@code localUptimeDelta}
    * @return the calculated drift
    */
   private double calculateDrift(double localUptimeDelta, double remoteUptimeDelta) {
@@ -297,18 +306,14 @@ public class RemoteUptimeClock {
           remoteUptimeDelta));
     }
 
-    double newDrift =
-        driftSensitivity * (localUptimeDelta / remoteUptimeDelta) + (1 - driftSensitivity) * drift;
+    double newDrift = driftSensitivity * (localUptimeDelta / remoteUptimeDelta) + (1 - driftSensitivity) * drift;
     // Non-jumping behavior from (localUptime, predictedRemoteUptime) to
     // (newLocalUptime, newAdjustedRemoteUptime). Note that it does not depend
     // directly on measuredRemoteUptime or newRemoteUptime.
-    double newPredictedRemoteUptime =
-        predictedRemoteUptime + (localUptimeDelta / (drift + errorReductionCoefficient));
+    double newPredictedRemoteUptime = predictedRemoteUptime + (localUptimeDelta / (drift + errorReductionCoefficient));
     double nextPredictedRemoteUptime = newRemoteUptime + remoteUptimeDelta;
-    double newCombinedDriftAndError =
-        localUptimeDelta / (nextPredictedRemoteUptime - newPredictedRemoteUptime);
-    double newErrorReductionCoefficient =
-        errorReductionCoefficientSensitivity * (newCombinedDriftAndError - newDrift);
+    double newCombinedDriftAndError = localUptimeDelta / (nextPredictedRemoteUptime - newPredictedRemoteUptime);
+    double newErrorReductionCoefficient = errorReductionCoefficientSensitivity * (newCombinedDriftAndError - newDrift);
     double deltaRatio = remoteUptimeDelta / localUptimeDelta;
     double error = newLocalUptime - toLocalUptime(newRemoteUptime);
     log.info(String.format("Latency: %.4f s, Delta ratio: %.4f, Drift: %.4g, "
@@ -327,7 +332,7 @@ public class RemoteUptimeClock {
    * been adjusted to compensate for latency while retrieving the remote uptime.
    * 
    * @param callable
-   *          returns the remote uptime as quickly as possible
+   *                 returns the remote uptime as quickly as possible
    * @return a new {@link UptimeCalculationResult}
    */
   private UptimeCalculationResult calculateNewUptime(Callable<Double> callable) {
@@ -349,12 +354,11 @@ public class RemoteUptimeClock {
    * Returns the estimated local uptime in seconds for the given remote uptime.
    * 
    * @param remoteUptime
-   *          the remote uptime to convert to local uptime
+   *                     the remote uptime to convert to local uptime
    * @return the estimated local uptime in seconds at the provided remote uptime
    */
   public double toLocalUptime(double remoteUptime) {
-    double localOffset =
-        (drift + errorReductionCoefficient) * (remoteUptime - predictedRemoteUptime);
+    double localOffset = (drift + errorReductionCoefficient) * (remoteUptime - predictedRemoteUptime);
     return localUptime + localOffset;
   }
 

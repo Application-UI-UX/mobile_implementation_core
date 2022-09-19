@@ -20,6 +20,7 @@ import com.github.message.Time;
 
 /**
  * Provide time.
+ * 
  * @author kwc@willowgarage.com (Ken Conley)
  */
 public interface TimeProvider {
