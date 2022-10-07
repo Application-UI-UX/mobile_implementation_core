@@ -8,6 +8,4 @@ bin
 .settings
 *.iml
 .idea
-bazel-*
 local.properties
-target/
