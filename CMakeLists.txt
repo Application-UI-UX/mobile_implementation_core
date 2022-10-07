@@ -9,7 +9,7 @@ find_package(
   catkin REQUIRED
   rosjava_build_tools
   rosjava_messages
-
+  rosjava_bootstrap
   geometry_msgs
   nav_msgs
   rosjava_test_msgs
