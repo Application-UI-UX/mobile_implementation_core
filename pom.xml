@@ -81,6 +81,11 @@
       <artifactId>rosjava_messages</artifactId>
       <version>0.4.0</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.Application-UI-UX</groupId>
+      <artifactId>rosjava_bootstrap</artifactId>
+      <version>0.4.0</version>
+    </dependency>
   </dependencies>
 
   <developers>
