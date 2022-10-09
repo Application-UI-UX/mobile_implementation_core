@@ -21,19 +21,20 @@
 
 rootProject.buildscript {
     repositories {
-        mavenCentral()
-        maven { url "https://jitpack.io" }
         maven {
-            url 'https://repo1.maven.org/maven2'
+            url = "https://jitpack.io"
+            url = 'https://repo1.maven.org/maven2'
             url = "https://repository.springsource.com/maven/bundles/release"
             url = "https://repository.springsource.com/maven/bundles/external"
+            url = "https://repo.maven.apache.org/maven2"
+            url = "https://jcenter.bintray.com"
         }
+        mavenCentral()
         mavenLocal()
-        maven { url = "https://repo.maven.apache.org/maven2" }
-        maven { url = "https://jcenter.bintray.com" }
         google()
     }
 }
+
 dependencies {
     implementation 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
     implementation 'com.github.Application-UI-UX:rosjava_messages:0.4.0'
