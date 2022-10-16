@@ -33,5 +33,5 @@ android {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation project(':rosjava')
-  testImplementation 'junit:junit:4.8.2'
+  testImplementation 'junit:junit:4.13.2'
 }
