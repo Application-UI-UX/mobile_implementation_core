@@ -20,12 +20,7 @@ Ronaldson Bellande
 */
 
 android {
-  compileSdk 32
   defaultConfig {
-    minSdk 21
-    targetSdk 32
-    versionCode 1
-    versionName "1.0"
     applicationId "com.github.Application-UI-UX.apache_xmlrpc_server"
   }
 }

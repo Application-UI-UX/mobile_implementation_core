@@ -22,12 +22,7 @@ Ronaldson Bellande
 apply plugin: 'application'
 
 android {
-  compileSdk 32
   defaultConfig {
-    minSdk 21
-    targetSdk 32
-    versionCode 1
-    versionName "1.0"
     applicationId "com.github.Application-UI-UX.rosjava_tutorial_pubsub"
   }
 }
