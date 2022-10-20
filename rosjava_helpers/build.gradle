@@ -3,12 +3,6 @@ Maintainer
 Ronaldson Bellande
 */
 
-android {
-    defaultConfig {
-        applicationId "com.github.Application-UI-UX.rosjava_helpers"
-    }
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':rosjava')

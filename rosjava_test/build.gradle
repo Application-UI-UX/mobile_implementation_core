@@ -21,12 +21,6 @@ Ronaldson Bellande
 
 apply plugin: 'application'
 
-android {
-  defaultConfig {
-    applicationId "com.github.Application-UI-UX.rosjava_test"
-  }
-}
-
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation project(':rosjava')

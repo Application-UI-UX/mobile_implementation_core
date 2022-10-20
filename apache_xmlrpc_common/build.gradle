@@ -19,12 +19,6 @@ Maintainer
 Ronaldson Bellande
 */
 
-android {
-  defaultConfig {
-    applicationId "com.github.Application-UI-UX.apache_xmlrpc_common"
-  }
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'javax.xml.bind:jaxb-api:2.4.0-b180830.0359'
