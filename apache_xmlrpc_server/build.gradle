@@ -19,9 +19,14 @@ Maintainer
 Ronaldson Bellande
 */
 
+plugins {
+  id "com.android.application"
+}
+
 android {
+  namespace "com.github.apache_xmlrpc_server"
   defaultConfig {
-    applicationId "com.github.Application-UI-UX.apache_xmlrpc_server"
+    applicationId "com.github.apache_xmlrpc_server"
   }
 }
 

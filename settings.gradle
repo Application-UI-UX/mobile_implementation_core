@@ -19,7 +19,39 @@ Maintainer
 Ronaldson Bellande
 */
 
-rootProject.name = 'rosjava_core'
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://jitpack.io"
+            url = 'https://repo1.maven.org/maven2'
+            url = "https://repository.springsource.com/maven/bundles/release"
+            url = "https://repository.springsource.com/maven/bundles/external"
+            url = "https://repo.maven.apache.org/maven2"
+            url = "https://jcenter.bintray.com"
+        }
+        gradlePluginPortal()
+        mavenCentral()
+        mavenLocal()
+        google()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        maven {
+            url = "https://jitpack.io"
+            url = 'https://repo1.maven.org/maven2'
+            url = "https://repository.springsource.com/maven/bundles/release"
+            url = "https://repository.springsource.com/maven/bundles/external"
+            url = "https://repo.maven.apache.org/maven2"
+            url = "https://jcenter.bintray.com"
+        }
+        mavenCentral()
+        mavenLocal()
+        google()
+    }
+}
 
 include 'apache_xmlrpc_common',
         'apache_xmlrpc_client',
@@ -33,3 +65,5 @@ include 'apache_xmlrpc_common',
         'rosjava_tutorial_right_hand_rule',
         'rosjava_tutorial_services',
         'docs'
+
+rootProject.name = 'rosjava_core'

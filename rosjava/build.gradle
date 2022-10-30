@@ -19,9 +19,14 @@ Maintainer
 Ronaldson Bellande
 */
 
+plugins {
+  id "com.android.application"
+}
+
 android {
+  namespace "com.github.rosjava"
   defaultConfig {
-    applicationId "com.github.Application-UI-UX.rosjava"
+    applicationId "com.github.rosjava"
   }
 }
 

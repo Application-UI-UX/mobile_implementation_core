@@ -19,11 +19,14 @@ Maintainer
 Ronaldson Bellande
 */
 
-apply plugin: 'application'
+plugins {
+  id "com.android.application"
+}
 
 android {
+  namespace "com.github.rosjava_tutorial_services"
   defaultConfig {
-    applicationId "com.github.Application-UI-UX.rosjava_tutorial_services"
+    applicationId "com.github.rosjava_tutorial_services"
   }
 }
 
