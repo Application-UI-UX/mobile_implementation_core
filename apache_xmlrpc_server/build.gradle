@@ -19,6 +19,17 @@ Maintainer
 Ronaldson Bellande
 */
 
+plugins {
+  id "com.android.application"
+}
+
+android {
+  namespace "com.github.apache_xmlrpc_server"
+  defaultConfig {
+    applicationId "com.github.apache_xmlrpc_server"
+  }
+}
+
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation project(':apache_xmlrpc_common')

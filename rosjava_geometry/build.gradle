@@ -19,6 +19,17 @@ Maintainer
 Ronaldson Bellande
 */
 
+plugins {
+  id "com.android.application"
+}
+
+android {
+  namespace "com.github.rosjava_geometry"
+  defaultConfig {
+    applicationId "com.github.rosjava_geometry"
+  }
+}
+
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation project(':rosjava')

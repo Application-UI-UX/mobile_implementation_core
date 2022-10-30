@@ -19,7 +19,16 @@ Maintainer
 Ronaldson Bellande
 */
 
-apply plugin: 'application'
+plugins {
+  id "com.android.application"
+}
+
+android {
+  namespace "com.github.rosjava_test"
+  defaultConfig {
+    applicationId "com.github.rosjava_test"
+  }
+}
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])

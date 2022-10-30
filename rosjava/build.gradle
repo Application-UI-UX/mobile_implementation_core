@@ -19,6 +19,17 @@ Maintainer
 Ronaldson Bellande
 */
 
+plugins {
+  id "com.android.application"
+}
+
+android {
+  namespace "com.github.rosjava"
+  defaultConfig {
+    applicationId "com.github.rosjava"
+  }
+}
+
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
 

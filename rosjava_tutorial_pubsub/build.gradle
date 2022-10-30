@@ -19,7 +19,16 @@ Maintainer
 Ronaldson Bellande
 */
 
-apply plugin: 'application'
+plugins {
+  id "com.android.application"
+}
+
+android {
+  namespace "com.github.rosjava_tutorial_pubsub"
+  defaultConfig {
+    applicationId "com.github.rosjava_tutorial_pubsub"
+  }
+}
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])

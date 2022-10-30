@@ -19,13 +19,42 @@ Maintainer
 Ronaldson Bellande
 */
 
-wrapper {
-  gradleVersion = "7.2.0"
-  distributionUrl = distributionUrl.replace("bin", "all")
+buildscript {
+  repositories {
+    maven {
+      url = "https://jitpack.io"
+      url = 'https://repo1.maven.org/maven2'
+      url = "https://repository.springsource.com/maven/bundles/release"
+      url = "https://repository.springsource.com/maven/bundles/external"
+      url = "https://repo.maven.apache.org/maven2"
+      url = "https://jcenter.bintray.com"
+      url = 'https://maven.google.com'
+    }
+    maven {
+      url  "https://oss.sonatype.org/content/repositories/snapshots"
+      content {
+        includeModule("com.google.dagger", "hilt-android-gradle-plugin")
+      }
+    }
+    gradlePluginPortal()
+    mavenCentral()
+    mavenLocal()
+    google()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:7.3.1'
+    classpath 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
+    classpath 'com.github.Application-UI-UX:rosjava_messages:0.4.0'
+    classpath 'com.github.Application-UI-UX:rosjava_bootstrap:0.4.0'
+  }
+}
+
+plugins {
+  id "com.android.application" version '7.3.1' apply false
+  id 'com.android.library' version '7.3.1' apply false
 }
 
 allprojects {
-  apply plugin: 'java'
   apply plugin: 'maven-publish'
   group 'com.github.Application-UI-UX'
   version '0.4.0'
@@ -43,13 +72,12 @@ allprojects {
     google()
   }
   dependencies {
-    implementation 'com.android.tools.build:gradle:7.2.0'
+    implementation 'com.android.tools.build:gradle:7.3.1'
     implementation "com.github.Application-UI-UX:rosjava_build_tools:0.4.0"
   }
 }
 
 subprojects {
-  apply plugin: 'java'
   apply plugin: 'maven-publish'
   apply plugin: 'idea'
   group 'com.github.Application-UI-UX'
@@ -66,10 +94,6 @@ subprojects {
     mavenCentral()
     mavenLocal()
     google()
-  }
-  dependencies {
-    implementation 'com.android.tools.build:gradle:7.2.0'
-    implementation 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
   }
   afterEvaluate {
     if(it.hasProperty('android')){

@@ -19,7 +19,16 @@ Maintainer
 Ronaldson Bellande
 */
 
-apply plugin: 'application'
+plugins {
+  id "com.android.application"
+}
+
+android {
+  namespace "com.github.rosjava_tutorial_right_hand_rule"
+  defaultConfig {
+    applicationId "com.github.rosjava_tutorial_right_hand_rule"
+  }
+}
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
