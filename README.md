@@ -1,10 +1,17 @@
 ## RosJava Core
 
-Updated Version [rosjava_core](https://github.com/Application-UI-UX/rosjava_core) readme.
+Updated Version [rosjava_core](https://github.com/Application-UI-UX/rosmobile_core) readme.
 
 Standard Version [rosjava_core](https://github.com/rosjava/rosjava_core) readme.
 
-This package is a generator of rosjava message artifacts for core ros messages.
+This package is a generator of rosjava message artifacts for core ros messages for mobile
+
+## Important
+The repository has diverged, as the old commits and codes are under the previous License and
+the new commits and codes are under New License
+
+----
+
 Latest versions and Maintainer is on Application-UI-UX
 
 ### Building and Packaging
@@ -12,8 +19,8 @@ The package is published in https://github.com/Application-UI-UX
 
 ### Adding Packages
 
-If you would like to add a message dependency to this list, first consider
-if it is a worthwhile candidate:
+If you would like to add a message dependency to this list, first consider if it is a worthwhile candidate, these libraries 
+are not trying  to replace existing more so displaying useful information to the user with controls
 
 * It is a direct dependency for rosjava/android
 * It is a popular and stable dependency that will require little maintenance
@@ -40,3 +47,7 @@ require a rebuild of this package:
 
 ### Maintainer
 * Ronaldson Bellande
+
+
+## License
+This SDK is distributed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0), see [LICENSE](https://github.com/Application-UI-UX/rosmobile_build_tools/blob/master/LICENSE) and [NOTICE](https://github.com/Application-UI-UX//blob/master/LICENSE) for more information.
