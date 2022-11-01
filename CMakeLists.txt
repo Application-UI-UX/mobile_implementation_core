@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(rosjava_core)
+project(rosmobile_core)
 
 ##############################################################################
 # Catkin
@@ -7,18 +7,18 @@ project(rosjava_core)
 
 find_package(
   catkin REQUIRED
-  rosjava_build_tools
-  rosjava_messages
-  rosjava_bootstrap
+  rosmobile_build_tools
+  rosmobile_messages
+  rosmobile_bootstrap
   geometry_msgs
   nav_msgs
-  rosjava_test_msgs
+  rosmobile_test_msgs
   rosgraph_msgs
   sensor_msgs
   tf2_msgs
 )
 
-catkin_rosjava_setup(publish installDist)
+catkin_rosmobile_setup(publish installDist)
 
 # make sure messages get built first if genjava is enabled
 add_dependencies(gradle-${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
@@ -30,6 +30,6 @@ catkin_package()
 ##############################################################################
 
 install(
-  DIRECTORY ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_MAVEN_DESTINATION}/com/github/rosjava_core/
-  DESTINATION ${CATKIN_GLOBAL_MAVEN_DESTINATION}/com/github/rosjava_core
+  DIRECTORY ${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_MAVEN_DESTINATION}/com/github/rosmobile_core/
+  DESTINATION ${CATKIN_GLOBAL_MAVEN_DESTINATION}/com/github/rosmobile_core
 )

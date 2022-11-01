@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>rosjava_core</name>
+  <name>rosmobile_core</name>
   <version>0.4.0</version>
   <description> An implementation of ROS in pure-Java with Android support.</description>
   <url>http://ros.org/wiki/rosjava_core</url>
@@ -9,36 +9,36 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>rosjava_build_tools</build_depend>
-  <build_depend>rosjava_bootstrap</build_depend>
+  <build_depend>rosmobile_build_tools</build_depend>
+  <build_depend>rosmobile_bootstrap</build_depend>
   <build_depend>geometry_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>
-  <build_depend>rosjava_test_msgs</build_depend>
+  <build_depend>rosmobile_test_msgs</build_depend>
   <build_depend>rosgraph_msgs</build_depend>
   <build_depend>sensor_msgs</build_depend>
   <build_depend>tf2_msgs</build_depend>
 
 
-  <build_export_depend>rosjava_build_tools</build_export_depend>
-  <build_export_depend>rosjava_bootstrap</build_export_depend>
+  <build_export_depend>rosmobile_build_tools</build_export_depend>
+  <build_export_depend>rosmobile_bootstrap</build_export_depend>
   <build_export_depend>geometry_msgs</build_export_depend>
   <build_export_depend>nav_msgs</build_export_depend>
-  <build_export_depend>rosjava_test_msgs</build_export_depend>
+  <build_export_depend>rosmobile_test_msgs</build_export_depend>
   <build_export_depend>rosgraph_msgs</build_export_depend>
   <build_export_depend>sensor_msgs</build_export_depend>
   <build_export_depend>tf2_msgs</build_export_depend>
 
 
-  <run_depend>rosjava_build_tools</run_depend>
-  <exec_depend>rosjava_bootstrap</exec_depend>
+  <run_depend>rosmobile_build_tools</run_depend>
+  <exec_depend>rosmobile_bootstrap</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>nav_msgs</exec_depend>
-  <exec_depend>rosjava_test_msgs</exec_depend>
+  <exec_depend>rosmobile_test_msgs</exec_depend>
   <exec_depend>rosgraph_msgs</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>tf2_msgs</exec_depend>
 
-  <!-- If genjava becomes official, drop rosjava_messages and depend directly.
+  <!-- If genjava becomes official, drop rosmobile_messages and depend directly.
     Currently only required to ensure deb builds generate the reqd artifacts -->
-  <build_depend>rosjava_messages</build_depend>
+  <build_depend>rosmobile_messages</build_depend>
 </package>
