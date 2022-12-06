@@ -6,15 +6,15 @@ Building
 Gradle
 ------
 
-rosjava_core uses the `Gradle`_ build system in tandem with an external maven
+rosmobile_core uses the `Gradle`_ build system in tandem with an external maven
 repository which supplies dependencies.
 
-To build rosjava_core and install it to your local `Maven`_ repository, execute
+To build rosmobile_core and install it to your local `Maven`_ repository, execute
 the `gradle wrapper`_:
 
 .. code-block:: bash
 
-  cd rosjava_core
+  cd rosmobile_core
   ./gradlew install
 
 To build the documentation, you may execute the docs task:

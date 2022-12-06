@@ -66,4 +66,4 @@ include 'apache_xmlrpc_common',
         'rosjava_tutorial_services',
         'docs'
 
-rootProject.name = 'rosjava_core'
+rootProject.name = 'rosmobile_core'

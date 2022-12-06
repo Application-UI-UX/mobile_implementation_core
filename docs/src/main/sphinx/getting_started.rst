@@ -154,7 +154,7 @@ processes:
 .. code-block:: bash
 
   # source your devel/setup.bash
-  roscd rosjava_core/rosjava_tutorial_pubsub
+  roscd rosmobile_core/rosjava_tutorial_pubsub
   ../gradlew installDist
   roscore &
   ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Talker &
@@ -235,7 +235,7 @@ Building and executing these nodes works in the same manner as described above:
 .. code-block:: bash
 
   # source your devel/setup.bash
-  roscd rosjava_core/rosjava_tutorial_pubsub
+  roscd rosmobile_core/rosjava_tutorial_pubsub
   ../gradlew installDist
   roscore &
   ./build/install/rosjava_tutorial_services/bin/rosjava_tutorial_services com.github.rosjava_tutorial_services.Server &

@@ -5,7 +5,7 @@
 # git clone https://github.com/johnynek/bazel-deps
 # cd bazel-deps
 # bazel build src/scala/com/github/johnynek/bazel_deps:parseproject_deploy.jar
-# cd ../rosjava_core
+# cd ../rosmobile_core
 # ../bazel-deps/gen_maven_deps.sh generate -r $PWD -s 3rdparty/workspace.bzl -d dependencies.yaml
 
 options:
