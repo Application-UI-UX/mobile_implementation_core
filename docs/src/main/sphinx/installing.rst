@@ -10,7 +10,7 @@ You will need a java implementation - this package has been well tested with ope
 but is also likely to work equally as well with other implementations (oraclejdk has
 also had minimal testing).
 
-If you would like to build the rosjava_core documentation, you will also need
+If you would like to build the rosmobile_core documentation, you will also need
 Pygments 1.5+ and Sphinx 1.1.3+. If you don't have native binaries, then
 
 .. code-block:: bash
@@ -26,8 +26,8 @@ you simply need to clone the github repository or you can use the publish link i
 
 .. code-block:: bash
 
-  git clone https://github.com/rosjava/rosjava_core
-  cd rosjava_core
+  git clone https://github.com/rosjava/rosmobile_core
+  cd rosmobile_core
   git checkout -b kinetic origin/kinetic
 
 and proceed immediately to the section on :ref:`building`.

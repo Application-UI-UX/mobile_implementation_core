@@ -3,7 +3,7 @@
   <name>rosmobile_core</name>
   <version>0.4.0</version>
   <description> An implementation of ROS in pure-Java with Android support.</description>
-  <url>http://ros.org/wiki/rosjava_core</url>
+  <url>http://ros.org/wiki/rosmobile_core</url>
   <maintainer email="ronaldsonbellande@gmail.com">Ronaldson Bellande</maintainer>
   <license>Apache 2.0</license>
 

@@ -1,8 +1,8 @@
 ## RosJava Core
 
-Updated Version [rosjava_core](https://github.com/Application-UI-UX/rosmobile_core) readme.
+Updated Version [rosmobile_core](https://github.com/Application-UI-UX/rosmobile_core) readme.
 
-Standard Version [rosjava_core](https://github.com/rosjava/rosjava_core) readme.
+Standard Version [rosmobile_core](https://github.com/rosjava/rosmobile_core) readme.
 
 This package is a generator of rosjava message artifacts for core ros messages for mobile
 
