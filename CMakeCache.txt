@@ -416,8 +416,8 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
-//The directory containing a CMake configuration file for rosjava_build_tools.
-rosjava_build_tools_DIR:PATH=rosjava_build_tools_DIR-NOTFOUND
+//The directory containing a CMake configuration file for rosmobile_build_tools.
+rosmobile_build_tools_DIR:PATH=rosmobile_build_tools_DIR-NOTFOUND
 
 //Value Computed by CMake
 rosmobile_core_BINARY_DIR:STATIC=/home/ronaldsonbellande-hplaptop/Desktop/User_Interface_Experience/rosmobile_core

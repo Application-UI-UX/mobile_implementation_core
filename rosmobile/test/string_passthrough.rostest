@@ -1,0 +1,17 @@
+<launch>
+  <node pkg="rosmobile" type="string_publisher.py" name="node0" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node1" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node2" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node3" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node4" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node5" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node6" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node7" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node8" />
+  <node pkg="rosmobile" type="string_publisher.py" name="node9" />
+
+  <node pkg="rosmobile" type="PassthroughTestNode" name="rosmobile_node" />
+
+  <test pkg="rosmobile" type="test_string_passthrough.py" test-name="string_passthrough" time-limit="90" />
+
+</launch>

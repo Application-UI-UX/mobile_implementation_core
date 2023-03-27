@@ -11,7 +11,7 @@ gradle/catkin project and subprojects. You might also wish to read the
 Gradle `Java tutorial`_ for more details about building Java projects with
 Gradle in general.
 
-.. _RosWiki: http://wiki.ros.org/rosjava
+.. _RosWiki: http://wiki.ros.org/rosmobile
 .. _Maven plugin: http://gradle.org/docs/current/userguide/maven_plugin.html
 .. _Application plugin: http://gradle.org/docs/current/userguide/application_plugin.html
 .. _Java tutorial: http://gradle.org/docs/current/userguide/tutorial_java_projects.html
@@ -20,7 +20,7 @@ Gradle in general.
 Creating nodes
 --------------
 
-Typically ROS nodes are synonymous with processes. In rosjava, however, nodes
+Typically ROS nodes are synonymous with processes. In rosmobile, however, nodes
 are more like :roswiki:`nodelet`\s in that many nodes can run in a single
 process, the Java VM.
 
@@ -64,7 +64,7 @@ implementation:
 The :javadoc:`com.github.node.NodeMain#getDefaultNodeName()` method returns the
 default name of the node. This name will be used unless a node name is
 specified in the :javadoc:`com.github.node.NodeConfiguration` (more on that
-later). :javadoc:`com.github.namespace.GraphName`\s are used throughout rosjava
+later). :javadoc:`com.github.namespace.GraphName`\s are used throughout rosmobile
 when refering to nodes, topics, and parameters. Most methods which accept a
 :javadoc:`com.github.namespace.GraphName` will also accept a string for
 convenience.
@@ -98,21 +98,21 @@ java.lang.Throwable)`.
 Publishers and subscribers
 --------------------------
 
-The following class (:javadoc:`com.github.rosjava_tutorial_pubsub.Talker`) is
-available from the rosjava_tutorial_pubsub package. In this example, we create
+The following class (:javadoc:`com.github.rosmobile_tutorial_pubsub.Talker`) is
+available from the rosmobile_tutorial_pubsub package. In this example, we create
 a publisher for the chatter topic. This should feel relatively familiar if
 you're a ROS veteran. The :javadoc:`com.github.topic.Publisher` publishes
 ``std_msgs.String`` messages to the ``/chatter`` topic.
 
-.. literalinclude:: ../../../../rosjava_tutorial_pubsub/src/main/java/com.github/rosjava_tutorial_pubsub/Talker.java
+.. literalinclude:: ../../../../rosmobile_tutorial_pubsub/src/main/java/com.github/rosmobile_tutorial_pubsub/Talker.java
   :language: java
   :linenos:
   :lines: 17-
   :emphasize-lines: 28,38
 
 Line 28 will probably feel unfamailiar even to ROS veterans. This is one
-example of rosjava's asynchornous API. The intent of our
-:javadoc:`com.github.rosjava_tutorial_pubsub.Talker` class is to publish a hello
+example of rosmobile's asynchornous API. The intent of our
+:javadoc:`com.github.rosmobile_tutorial_pubsub.Talker` class is to publish a hello
 world message to anyone who will listen once per second. One way to accomplish
 this is to publish the message and sleep in a loop. However, we don't want to
 block the :javadoc:`com.github.node.NodeListener#onStart(com.github.node.Node)`
@@ -122,18 +122,18 @@ automatically when the :javadoc:`com.github.node.Node` exits.
 
 On line 38 we create a new ``std_msgs.String`` message to publish using the
 :javadoc:`com.github.node.topic.Publisher#newMessage()` method. Messages in
-rosjava cannot be instantiated directly. More on that later.
+rosmobile cannot be instantiated directly. More on that later.
 
-Now lets take a look at the :javadoc:`com.github.rosjava_tutorial_pubsub.Listener`
+Now lets take a look at the :javadoc:`com.github.rosmobile_tutorial_pubsub.Listener`
 class.
 
-.. literalinclude:: ../../../../rosjava_tutorial_pubsub/src/main/java/com.github/rosjava_tutorial_pubsub/Listener.java
+.. literalinclude:: ../../../../rosmobile_tutorial_pubsub/src/main/java/com.github/rosmobile_tutorial_pubsub/Listener.java
   :language: java
   :linenos:
   :lines: 17-
   :emphasize-lines: 27-32
 
-In lines 27-32 we see another example of rosjava's asynchornous API. We can add
+In lines 27-32 we see another example of rosmobile's asynchornous API. We can add
 as many :javadoc:`com.github.message.MessageListener`\s to our
 :javadoc:`com.github.node.topic.Subscriber` as we like. When a new message is
 received, all of our :javadoc:`com.github.message.MessageListener`\s will be
@@ -147,18 +147,18 @@ When packaging your application into jar, you can use :javadoc:`com.github.RosRu
 as the main class. :javadoc:`com.github.RosRun` provides a
 :javadoc:`com.github.node.NodeMainExecutor` and a command line interface that will
 be familiar to ROS veterans. For example, the following steps will build and
-execute the :javadoc:`com.github.rosjava_tutorial_pubsub.Talker` and
-:javadoc:`com.github.rosjava_tutorial_pubsub.Listener` nodes in separate
+execute the :javadoc:`com.github.rosmobile_tutorial_pubsub.Talker` and
+:javadoc:`com.github.rosmobile_tutorial_pubsub.Listener` nodes in separate
 processes:
 
 .. code-block:: bash
 
   # source your devel/setup.bash
-  roscd rosmobile_core/rosjava_tutorial_pubsub
+  roscd rosmobile_core/rosmobile_tutorial_pubsub
   ../gradlew installDist
   roscore &
-  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Talker &
-  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Listener
+  ./build/install/rosmobile_tutorial_pubsub/bin/rosmobile_tutorial_pubsub com.github.rosmobile_tutorial_pubsub.Talker &
+  ./build/install/rosmobile_tutorial_pubsub/bin/rosmobile_tutorial_pubsub com.github.rosmobile_tutorial_pubsub.Listener
 
 .. note:: The above example launches roscore and the Talker node in the
   background. You could instead launch each in a separate terminal. Also, you
@@ -179,8 +179,8 @@ the default topic /chatter to /foo.
 
 .. code-block:: bash
 
-  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Talker chatter:=/foo &
-  ./build/install/rosjava_tutorial_pubsub/bin/rosjava_tutorial_pubsub com.github.rosjava_tutorial_pubsub.Listener chatter:=/foo
+  ./build/install/rosmobile_tutorial_pubsub/bin/rosmobile_tutorial_pubsub com.github.rosmobile_tutorial_pubsub.Talker chatter:=/foo &
+  ./build/install/rosmobile_tutorial_pubsub/bin/rosmobile_tutorial_pubsub com.github.rosmobile_tutorial_pubsub.Listener chatter:=/foo
 
 See :roswiki:`Remapping%20Arguments` for more information on passing arguments
 to ROS executables.
@@ -192,13 +192,13 @@ to ROS executables.
 Services
 --------
 
-The following class (:javadoc:`com.github.rosjava_tutorial_services.Server`) is
-available from the rosjava_tutorial_services package. In this example, we
+The following class (:javadoc:`com.github.rosmobile_tutorial_services.Server`) is
+available from the rosmobile_tutorial_services package. In this example, we
 create a :javadoc:`com.github.node.service.ServiceServer` for the
-``rosjava_test_msgs.AddTwoInts`` service. This should feel relatively familiar if you're
+``rosmobile_test_msgs.AddTwoInts`` service. This should feel relatively familiar if you're
 a ROS veteran.
 
-.. literalinclude:: ../../../../rosjava_tutorial_services/src/main/java/com.github/rosjava_tutorial_services/Server.java
+.. literalinclude:: ../../../../rosmobile_tutorial_services/src/main/java/com.github/rosmobile_tutorial_services/Server.java
   :language: java
   :linenos:
   :lines: 17-
@@ -210,16 +210,16 @@ output parameter to contain the sum of the two integers in the request. The
 response will be sent once the
 :javadoc:`com.github.node.service.ServiceResponseBuilder#build(T, S)` returns.
 
-Now lets take a look at the :javadoc:`com.github.rosjava_tutorial_services.Client`
+Now lets take a look at the :javadoc:`com.github.rosmobile_tutorial_services.Client`
 class.
 
-.. literalinclude:: ../../../../rosjava_tutorial_services/src/main/java/com.github/rosjava_tutorial_services/Client.java
+.. literalinclude:: ../../../../rosmobile_tutorial_services/src/main/java/com.github/rosmobile_tutorial_services/Client.java
   :language: java
   :linenos:
   :lines: 17-
   :emphasize-lines: 36-47
 
-In lines 36-47 we see another example of rosjava's asynchornous API. When the
+In lines 36-47 we see another example of rosmobile's asynchornous API. When the
 response is received, our
 :javadoc:`com.github.node.service.ServiceResponseListener` will be called with the
 incoming response as an argument to
@@ -235,11 +235,11 @@ Building and executing these nodes works in the same manner as described above:
 .. code-block:: bash
 
   # source your devel/setup.bash
-  roscd rosmobile_core/rosjava_tutorial_pubsub
+  roscd rosmobile_core/rosmobile_tutorial_pubsub
   ../gradlew installDist
   roscore &
-  ./build/install/rosjava_tutorial_services/bin/rosjava_tutorial_services com.github.rosjava_tutorial_services.Server &
-  ./build/install/rosjava_tutorial_services/bin/rosjava_tutorial_services com.github.rosjava_tutorial_services.Client
+  ./build/install/rosmobile_tutorial_services/bin/rosmobile_tutorial_services com.github.rosmobile_tutorial_services.Server &
+  ./build/install/rosmobile_tutorial_services/bin/rosmobile_tutorial_services com.github.rosmobile_tutorial_services.Client
 
 At this point, you should see the log message "2 + 2 = 4" appear in your
 terminal. You can also access the service using the :roswiki:`rosservice`
@@ -271,12 +271,12 @@ the underlying message implementation to change in the future. ::
       .newMessage(sensor_msgs.PointCloud._TYPE);
 
 If you want to use messages that you define, whether they are officially released packages or your
-own custom packages, follow the instructions on the roswiki (refer to :roswiki:`rosjava/Messages`).
+own custom packages, follow the instructions on the roswiki (refer to :roswiki:`rosmobile/Messages`).
 
 Parameters
 ----------
 
-rosjava offers full access to the ROS :roswiki:`Parameter Server`. The
+rosmobile offers full access to the ROS :roswiki:`Parameter Server`. The
 :roswiki:`Parameter Server` is a shared dictionary of configuration parameters
 accessible to all the nodes at runtime. It is meant to store configuration
 parameters that are easy to inspect and modify.
@@ -292,7 +292,7 @@ Accessing Parameters
 The :javadoc:`com.github.node.parameter.ParameterTree` API allows you to set and
 query lists, maps, and single objects of integers, strings and floats.
 
-Unlike typical ROS :roswiki:`Client Libraries`, rosjava requires that the type
+Unlike typical ROS :roswiki:`Client Libraries`, rosmobile requires that the type
 of the parameter be known when you retrieve it. If the actual parameter type
 doesn't match the expected type, an exception will be thrown. ::
 
@@ -332,7 +332,7 @@ casting the value appropriately.
 Logging
 -------
 
-The logging interface for rosjava is accessed through
+The logging interface for rosmobile is accessed through
 :javadoc:`com.github.node.Node` objects via the
 :javadoc:`com.github.node.Node#getLog()` method. This object returns an `Apache
 Commons Log`_ object which handles the debug, info, error, warning, and fatal

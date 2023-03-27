@@ -4,7 +4,7 @@ Advanced topics
 Listeners
 ---------
 
-Because rosjava provides a primarily asynchronous API, many classes which allow
+Because rosmobile provides a primarily asynchronous API, many classes which allow
 you to provide event listeners. For example,
 :javadoc:`com.github.node.topic.PublisherListener`\s allow you to react to
 lifecycle events of a :javadoc:`com.github.node.topic.Publisher`. The snippet

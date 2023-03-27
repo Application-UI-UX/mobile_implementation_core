@@ -24,7 +24,7 @@ Changelog
 * Added Bazel build support.
 * Supporting XMLRPC multicalls - prevents ROS master from shutting down when a launchfile is launched.
 * Fix for race condition in `RetryingExecutorService`.
-* Improved error checking and tests for `rosjava_helpers`.
+* Improved error checking and tests for `rosmobile_helpers`.
 * Contributors: Juan Ignacio Ubeira, Rodrigo Queiro, Wojciech Mlynarczyk.
 
 0.3.5 (2017-07-17)
@@ -52,7 +52,7 @@ Changelog
 0.3.2 (2017-03-06)
 ------------------
 * Adds fix for shutting down DefaultNodeMainExecutor ListenerGroup to prevent leak in android when activities are destroyed.
-* Added ability to remove listener from ListenerGroup to fix android_core issue `#254 <https://github.com/rosjava/rosmobile_core/issues/254>`_.
+* Added ability to remove listener from ListenerGroup to fix android_core issue `#254 <https://github.com/rosmobile/rosmobile_core/issues/254>`_.
 
 0.3.1 (2017-02-22)
 ------------------
@@ -116,8 +116,8 @@ Changelog
 * message generation code moved out
 * message generation moved out
 * using gradle plugins to eliminate copied build logic
-* uses the github rosjava/rosjava_maven_repo for pulling external dependencies
+* uses the github rosmobile/rosmobile_maven_repo for pulling external dependencies
 * uses local maven repositories embedded in the ros workspaces (share/maven)
 * cmake installation rules - deb building starting
-* test_ros messages -> rosjava_test_msgs
+* test_ros messages -> rosmobile_test_msgs
 

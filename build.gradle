@@ -43,9 +43,9 @@ buildscript {
   }
   dependencies {
     classpath 'com.android.tools.build:gradle:7.3.1'
-    classpath 'com.github.Application-UI-UX:rosjava_build_tools:0.4.0'
-    classpath 'com.github.Application-UI-UX:rosjava_messages:0.4.0'
-    classpath 'com.github.Application-UI-UX:rosjava_bootstrap:0.4.0'
+    classpath 'com.github.Application-UI-UX:rosmobile_build_tools:0.4.0'
+    classpath 'com.github.Application-UI-UX:rosmobile_messages:0.4.0'
+    classpath 'com.github.Application-UI-UX:rosmobile_bootstrap:0.4.0'
   }
 }
 
@@ -73,7 +73,7 @@ allprojects {
   }
   dependencies {
     implementation 'com.android.tools.build:gradle:7.3.1'
-    implementation "com.github.Application-UI-UX:rosjava_build_tools:0.4.0"
+    implementation "com.github.Application-UI-UX:rosmobile_build_tools:0.4.0"
   }
 }
 

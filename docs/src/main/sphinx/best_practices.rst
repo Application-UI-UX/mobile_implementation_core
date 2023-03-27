@@ -1,9 +1,9 @@
 Best practices
 ==============
 
-rosjava is different than other ROS client libraries in many respects. As a
+rosmobile is different than other ROS client libraries in many respects. As a
 result, there are new best practices that should be followed while developing a
-rosjava application.
+rosmobile application.
 
 Java package names
 ------------------
@@ -12,12 +12,12 @@ As usual, Java package names should start with a reversed domain name. In the
 ROS ecosystem, the domain name should be followed by the ROS package name. For
 example:
 
-- com.github.rosjava
-- com.github.rosjava_geometry
+- com.github.rosmobile
+- com.github.rosmobile_geometry
 
 Only core packages (e.g. those in rosmobile_core and android_core) should begin
 with com.github. A suitably unique choice for github based repos would be
 the github url followed organization and repository/package name, e.g.
 
-- com.github.rosjava.rosjava_extras
+- com.github.rosmobile.rosmobile_extras
 
