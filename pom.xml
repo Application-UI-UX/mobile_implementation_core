@@ -73,17 +73,17 @@
     </dependency>
     <dependency>
       <groupId>com.github.Application-UI-UX</groupId>
-      <artifactId>rosjava_build_tools</artifactId>
+      <artifactId>rosmobile_build_tools</artifactId>
       <version>0.4.0</version>
     </dependency>
     <dependency>
       <groupId>com.github.Application-UI-UX</groupId>
-      <artifactId>rosjava_messages</artifactId>
+      <artifactId>rosmobile_messages</artifactId>
       <version>0.4.0</version>
     </dependency>
     <dependency>
       <groupId>com.github.Application-UI-UX</groupId>
-      <artifactId>rosjava_bootstrap</artifactId>
+      <artifactId>rosmobile_bootstrap</artifactId>
       <version>0.4.0</version>
     </dependency>
   </dependencies>

@@ -26,7 +26,7 @@ you simply need to clone the github repository or you can use the publish link i
 
 .. code-block:: bash
 
-  git clone https://github.com/rosjava/rosmobile_core
+  git clone https://github.com/rosmobile/rosmobile_core
   cd rosmobile_core
   git checkout -b kinetic origin/kinetic
 
@@ -36,9 +36,9 @@ ROS Installation
 ----------------
 
 If you would like a full ros environment backending your installation (you might
-be generating code for your own custom messages, sequencing builds of multiple rosjava
+be generating code for your own custom messages, sequencing builds of multiple rosmobile
 repositories or using mixed packages, e.g. java + python) then refer to the `RosWiki`_
 for more details.
 
-.. _RosWiki: http://wiki.ros.org/rosjava
+.. _RosWiki: http://wiki.ros.org/rosmobile
 

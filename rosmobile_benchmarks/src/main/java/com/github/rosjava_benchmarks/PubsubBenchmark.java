@@ -1,0 +1,97 @@
+/*
+ * Copyright (C) 2012 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+
+package com.github.rosmobile_benchmarks;
+
+import com.github.concurrent.CancellableLoop;
+import com.github.concurrent.Rate;
+import com.github.concurrent.WallTimeRate;
+import com.github.message.Duration;
+import com.github.message.MessageListener;
+import com.github.message.Time;
+import com.github.namespace.GraphName;
+import com.github.node.AbstractNodeMain;
+import com.github.node.ConnectedNode;
+import com.github.node.topic.Publisher;
+import com.github.node.topic.Subscriber;
+import tf2_msgs.TFMessage;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+
+/**
+ * @author damonkohler@google.com (Damon Kohler)
+ */
+public class PubsubBenchmark extends AbstractNodeMain {
+
+  private final AtomicInteger counter;
+
+  private Publisher<std_msgs.String> statusPublisher;
+  private Publisher<tf2_msgs.TFMessage> tfPublisher;
+  private Subscriber<tf2_msgs.TFMessage> tfSubscriber;
+  private Time time;
+
+  public PubsubBenchmark() {
+    counter = new AtomicInteger();
+  }
+
+  @Override
+  public GraphName getDefaultNodeName() {
+    return GraphName.of("pubsub_benchmark");
+  }
+
+  @Override
+  public void onStart(final ConnectedNode connectedNode) {
+    tfSubscriber = connectedNode.newSubscriber("tf", tf2_msgs.TFMessage._TYPE);
+    tfSubscriber.addMessageListener(new MessageListener<tf2_msgs.TFMessage>() {
+      @Override
+      public void onNewMessage(tf2_msgs.TFMessage message) {
+        counter.incrementAndGet();
+      }
+    });
+
+    tfPublisher = connectedNode.newPublisher("tf", tf2_msgs.TFMessage._TYPE);
+    final tf2_msgs.TFMessage tfMessage = tfPublisher.newMessage();
+    geometry_msgs.TransformStamped transformStamped =
+        connectedNode.getTopicMessageFactory().newFromType(geometry_msgs.TransformStamped._TYPE);
+    tfMessage.getTransforms().add(transformStamped);
+    connectedNode.executeCancellableLoop(new CancellableLoop() {
+      @Override
+      protected void loop() throws InterruptedException {
+        tfPublisher.publish(tfMessage);
+      }
+    });
+
+    time = connectedNode.getCurrentTime();
+    statusPublisher = connectedNode.newPublisher("status", std_msgs.String._TYPE);
+    final Rate rate = new WallTimeRate(1);
+    final std_msgs.String status = statusPublisher.newMessage();
+    connectedNode.executeCancellableLoop(new CancellableLoop() {
+      @Override
+      protected void loop() throws InterruptedException {
+        Time now = connectedNode.getCurrentTime();
+        Duration delta = now.subtract(time);
+        if (delta.totalNsecs() > TimeUnit.NANOSECONDS.convert(5, TimeUnit.SECONDS)) {
+          double hz = counter.getAndSet(0) * 1e9 / delta.totalNsecs();
+          status.setData(String.format("%.2f Hz", hz));
+          statusPublisher.publish(status);
+          time = now;
+        }
+        rate.sleep();
+      }
+    });
+  }
+}

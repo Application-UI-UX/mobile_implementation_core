@@ -40,7 +40,7 @@ Catkin
 
 It also has a very minimal catkin wrapper that relays build instructions to the
 underlying gradle builder. This lets the repository be easily built and
-deployed alongside other rosjava repositories in a ros environment. Refer to
+deployed alongside other rosmobile repositories in a ros environment. Refer to
 the `RosWiki`_ for more information.
 
 
@@ -48,5 +48,5 @@ the `RosWiki`_ for more information.
 .. _rosmake: http://ros.org/wiki/rosmake/
 .. _Maven: http://maven.apache.org/
 .. _gradle wrapper: http://gradle.org/docs/current/userguide/gradle_wrapper.html
-.. _RosWiki: http://wiki.ros.org/rosjava
+.. _RosWiki: http://wiki.ros.org/rosmobile
 .. _Package: https://github.com/Application-UI-UX
