@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.jaxb:jaxb-runtime:4.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/4.0.1/7abfa1ee788a8f090dc598c45876ef068731e72b/jaxb-runtime-4.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/4.0.1/e7fce24c19aea61f7d58f78961b8f11886d30f0b/jaxb-runtime-4.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
