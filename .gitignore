@@ -18,4 +18,4 @@ push.sh
 publish.sh
 ros_publish.sh
 prerelease_test.sh
-fix_errors.sfix_h
+fix_errors.sh

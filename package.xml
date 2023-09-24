@@ -11,6 +11,7 @@
 
   <build_depend>rosmobile_build_tools</build_depend>
   <build_depend>rosmobile_bootstrap</build_depend>
+  <build_depend>rosmobile_messages</build_depend>
   <build_depend>geometry_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>
   <build_depend>rosmobile_test_msgs</build_depend>
@@ -38,7 +39,4 @@
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>tf2_msgs</exec_depend>
 
-  <!-- If genjava becomes official, drop rosmobile_messages and depend directly.
-    Currently only required to ensure deb builds generate the reqd artifacts -->
-  <build_depend>rosmobile_messages</build_depend>
 </package>
