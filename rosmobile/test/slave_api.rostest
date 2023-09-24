@@ -1,4 +1,0 @@
-<launch>
-  <node pkg="rosmobile" type="SlaveApiTestNode" name="test_node" />
-  <test pkg="test_ros" type="test_slave_api.py" test-name="rosmobile_slave_api" args="--profile=$(find rosmobile)/test/rosmobile_profile.yaml" />
-</launch>

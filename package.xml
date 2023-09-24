@@ -1,40 +1,40 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>rosmobile_core</name>
+  <name>mobile_implementation_core</name>
   <version>0.4.0</version>
   <description> An implementation of ROS in pure-Java with Android support</description>
-  <url>http://ros.org/wiki/rosmobile_core</url>
+  <url>http://ros.org/wiki/mobile_implementation_core</url>
   <maintainer email="ronaldsonbellande@gmail.com">Ronaldson Bellande</maintainer>
   <license>Apache 2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>rosmobile_build_tools</build_depend>
-  <build_depend>rosmobile_bootstrap</build_depend>
-  <build_depend>rosmobile_messages</build_depend>
+  <build_depend>mobile_implementation_core_build_tools</build_depend>
+  <build_depend>mobile_implementation_core_bootstrap</build_depend>
+  <build_depend>mobile_implementation_core_messages</build_depend>
   <build_depend>geometry_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>
-  <build_depend>rosmobile_test_msgs</build_depend>
+  <build_depend>mobile_implementation_core_test_msgs</build_depend>
   <build_depend>rosgraph_msgs</build_depend>
   <build_depend>sensor_msgs</build_depend>
   <build_depend>tf2_msgs</build_depend>
 
 
-  <build_export_depend>rosmobile_build_tools</build_export_depend>
-  <build_export_depend>rosmobile_bootstrap</build_export_depend>
+  <build_export_depend>mobile_implementation_core_build_tools</build_export_depend>
+  <build_export_depend>mobile_implementation_core_bootstrap</build_export_depend>
   <build_export_depend>geometry_msgs</build_export_depend>
   <build_export_depend>nav_msgs</build_export_depend>
-  <build_export_depend>rosmobile_test_msgs</build_export_depend>
+  <build_export_depend>mobile_implementation_core_test_msgs</build_export_depend>
   <build_export_depend>rosgraph_msgs</build_export_depend>
   <build_export_depend>sensor_msgs</build_export_depend>
   <build_export_depend>tf2_msgs</build_export_depend>
 
 
-  <run_depend>rosmobile_build_tools</run_depend>
-  <exec_depend>rosmobile_bootstrap</exec_depend>
+  <run_depend>mobile_implementation_core_build_tools</run_depend>
+  <exec_depend>mobile_implementation_core_bootstrap</exec_depend>
   <exec_depend>geometry_msgs</exec_depend>
   <exec_depend>nav_msgs</exec_depend>
-  <exec_depend>rosmobile_test_msgs</exec_depend>
+  <exec_depend>mobile_implementation_core_test_msgs</exec_depend>
   <exec_depend>rosgraph_msgs</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>tf2_msgs</exec_depend>

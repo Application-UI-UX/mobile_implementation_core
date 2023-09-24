@@ -15,14 +15,14 @@
             <option value="$PROJECT_DIR$/apache_xmlrpc_common" />
             <option value="$PROJECT_DIR$/apache_xmlrpc_server" />
             <option value="$PROJECT_DIR$/docs" />
-            <option value="$PROJECT_DIR$/rosmobile" />
-            <option value="$PROJECT_DIR$/rosmobile_benchmarks" />
-            <option value="$PROJECT_DIR$/rosmobile_geometry" />
-            <option value="$PROJECT_DIR$/rosmobile_helpers" />
-            <option value="$PROJECT_DIR$/rosmobile_test" />
-            <option value="$PROJECT_DIR$/rosmobile_tutorial_pubsub" />
-            <option value="$PROJECT_DIR$/rosmobile_tutorial_right_hand_rule" />
-            <option value="$PROJECT_DIR$/rosmobile_tutorial_services" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_benchmarks" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_geometry" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_helpers" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_test" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_tutorial_pubsub" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_tutorial_right_hand_rule" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_tutorial_services" />
           </set>
         </option>
       </GradleProjectSettings>

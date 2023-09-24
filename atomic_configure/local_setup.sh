@@ -3,7 +3,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/ronaldsonbellande-hplaptop/Desktop/User_Interface_Experience/rosmobile_core/devel}
+: ${_CATKIN_SETUP_DIR:=/home/ronaldsonbellande-hplaptop/Desktop/User_Interface_Experience/mobile_implementation_core/devel}
 CATKIN_SETUP_UTIL_ARGS="--extend --local"
 . "$_CATKIN_SETUP_DIR/setup.sh"
 unset CATKIN_SETUP_UTIL_ARGS

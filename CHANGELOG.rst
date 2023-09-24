@@ -2,6 +2,17 @@
 Changelog
 =========
 
+0.4.1 (2023-09-24)
+------------------
+* Fix countless bugs in the repository 
+* Rerelease dedicated code for maven, ros, and python
+* Change name for more discriptions a take down old publish namees
+* Make repository compatible with ROS2 and will now be compatible for ROS1 and ROS2
+* Upgrade version of all builds and make it more compatible
+* Fix countless bugs in the repository and recalibrate
+* Release dedicated code for maven, ros, and python 
+* Maintainer & Contributors & Aurthor: Ronaldson Bellande
+
 0.4.0 (2022-05-19)
 ------------------
 * Update package.xml, CMakeList.txt for noetic branch
@@ -24,7 +35,7 @@ Changelog
 * Added Bazel build support.
 * Supporting XMLRPC multicalls - prevents ROS master from shutting down when a launchfile is launched.
 * Fix for race condition in `RetryingExecutorService`.
-* Improved error checking and tests for `rosmobile_helpers`.
+* Improved error checking and tests for `mobile_implementation_core_helpers`.
 * Contributors: Juan Ignacio Ubeira, Rodrigo Queiro, Wojciech Mlynarczyk.
 
 0.3.5 (2017-07-17)
@@ -52,7 +63,7 @@ Changelog
 0.3.2 (2017-03-06)
 ------------------
 * Adds fix for shutting down DefaultNodeMainExecutor ListenerGroup to prevent leak in android when activities are destroyed.
-* Added ability to remove listener from ListenerGroup to fix android_core issue `#254 <https://github.com/rosmobile/rosmobile_core/issues/254>`_.
+* Added ability to remove listener from ListenerGroup to fix android_core issue `#254 <https://github.com/mobile_implementation_core/mobile_implementation_core/issues/254>`_.
 
 0.3.1 (2017-02-22)
 ------------------
@@ -116,8 +127,8 @@ Changelog
 * message generation code moved out
 * message generation moved out
 * using gradle plugins to eliminate copied build logic
-* uses the github rosmobile/rosmobile_maven_repo for pulling external dependencies
+* uses the github mobile_implementation_core/mobile_implementation_core_maven_repo for pulling external dependencies
 * uses local maven repositories embedded in the ros workspaces (share/maven)
 * cmake installation rules - deb building starting
-* test_ros messages -> rosmobile_test_msgs
+* test_ros messages -> mobile_implementation_core_test_msgs
 

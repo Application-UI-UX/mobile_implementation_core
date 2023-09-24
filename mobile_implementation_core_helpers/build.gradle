@@ -1,0 +1,23 @@
+/*
+Maintainer
+Ronaldson Bellande
+*/
+
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "com.github.mobile_implementation_core_helpers"
+    defaultConfig {
+        applicationId "com.github.mobile_implementation_core_helpers"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':mobile_implementation_core')
+    implementation 'org.yaml:snakeyaml:1.33'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation project(':mobile_implementation_core').sourceSets.test.output
+}

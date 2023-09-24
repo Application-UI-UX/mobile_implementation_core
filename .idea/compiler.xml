@@ -14,7 +14,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/4.0.1/797720dfe2e15504f6014fb82eb873051a653c75/txw2-4.0.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/4.1.1/9b3769c76235bc283b060da4fae2318c6d53f07e/istack-commons-runtime-4.1.1.jar" />
         </processorPath>
-        <module name="rosmobile_core.apache_xmlrpc_common.main" />
+        <module name="mobile_implementation_core.apache_xmlrpc_common.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11" />

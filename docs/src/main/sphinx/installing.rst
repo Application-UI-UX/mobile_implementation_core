@@ -10,7 +10,7 @@ You will need a java implementation - this package has been well tested with ope
 but is also likely to work equally as well with other implementations (oraclejdk has
 also had minimal testing).
 
-If you would like to build the rosmobile_core documentation, you will also need
+If you would like to build the mobile_implementation_core documentation, you will also need
 Pygments 1.5+ and Sphinx 1.1.3+. If you don't have native binaries, then
 
 .. code-block:: bash
@@ -26,8 +26,8 @@ you simply need to clone the github repository or you can use the publish link i
 
 .. code-block:: bash
 
-  git clone https://github.com/rosmobile/rosmobile_core
-  cd rosmobile_core
+  git clone https://github.com/mobile_implementation_core/mobile_implementation_core
+  cd mobile_implementation_core
   git checkout -b kinetic origin/kinetic
 
 and proceed immediately to the section on :ref:`building`.
@@ -36,9 +36,9 @@ ROS Installation
 ----------------
 
 If you would like a full ros environment backending your installation (you might
-be generating code for your own custom messages, sequencing builds of multiple rosmobile
+be generating code for your own custom messages, sequencing builds of multiple mobile_implementation_core
 repositories or using mixed packages, e.g. java + python) then refer to the `RosWiki`_
 for more details.
 
-.. _RosWiki: http://wiki.ros.org/rosmobile
+.. _RosWiki: http://wiki.ros.org/mobile_implementation_core
 

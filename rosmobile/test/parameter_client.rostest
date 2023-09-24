@@ -1,9 +1,0 @@
-<launch>
-
-  <rosparam command="load" file="$(find rosmobile)/test/parameter_client_params.yaml" />
-  <node pkg="rosmobile" type="ParameterServerTestNode" name="param_client" />
-  <test pkg="rosmobile" type="test_parameter_client.py" test-name="parameter_client" />
-
-  <!-- TODO test inside of a namespace -->
-
-</launch>

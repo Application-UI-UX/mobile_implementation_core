@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="mobile_implementation_core" type="composite_publisher.py" name="node0" />
+  <node pkg="mobile_implementation_core" type="PassthroughTestNode" name="mobile_implementation_core_node" />
+  <test pkg="mobile_implementation_core" type="test_composite_passthrough.py" test-name="composite_passthrough" />
+</launch>

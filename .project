@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>rosmobile_core</name>
-	<comment>Project rosmobile_core created by Buildship.</comment>
+	<name>mobile_implementation_core</name>
+	<comment>Project mobile_implementation_core created by Buildship.</comment>
 	<projects>
 	</projects>
 	<buildSpec>

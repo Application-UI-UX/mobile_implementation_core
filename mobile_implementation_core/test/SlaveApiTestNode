@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec java -jar `rospack find mobile_implementation_core`/dist/mobile_implementation_core.jar org.ros.SlaveApiTestNode $@
