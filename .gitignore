@@ -1,11 +1,21 @@
-.pydevproject
+*.class
 *.pyc
-.gradle
+
+# Folders
 build
-bin
-.classpath
-.project
-.settings
-*.iml
-.idea
-local.properties
+devel
+dist
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Scripts
+init_setup.sh
+repository_recal.sh
+push.sh
+publish.sh
+ros_publish.sh
+prerelease_test.sh
+fix_errors.sh

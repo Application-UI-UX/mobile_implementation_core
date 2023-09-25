@@ -56,14 +56,14 @@ dependencyResolutionManagement {
 include 'apache_xmlrpc_common',
         'apache_xmlrpc_client',
         'apache_xmlrpc_server',
-        'rosmobile',
-        'rosmobile_geometry',
-        'rosmobile_benchmarks',
-        'rosmobile_test',
-        'rosmobile_helpers',
-        'rosmobile_tutorial_pubsub',
-        'rosmobile_tutorial_right_hand_rule',
-        'rosmobile_tutorial_services',
+        'mobile_implementation_core',
+        'mobile_implementation_core_geometry',
+        'mobile_implementation_core_benchmarks',
+        'mobile_implementation_core_test',
+        'mobile_implementation_core_helpers',
+        'mobile_implementation_core_tutorial_pubsub',
+        'mobile_implementation_core_tutorial_right_hand_rule',
+        'mobile_implementation_core_tutorial_services',
         'docs'
 
-rootProject.name = 'rosmobile_core'
+rootProject.name = 'mobile_implementation_core'

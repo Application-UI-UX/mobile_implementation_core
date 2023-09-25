@@ -6,15 +6,15 @@ Building
 Gradle
 ------
 
-rosmobile_core uses the `Gradle`_ build system in tandem with an external maven
+mobile_implementation_core uses the `Gradle`_ build system in tandem with an external maven
 repository which supplies dependencies.
 
-To build rosmobile_core and install it to your local `Maven`_ repository, execute
+To build mobile_implementation_core and install it to your local `Maven`_ repository, execute
 the `gradle wrapper`_:
 
 .. code-block:: bash
 
-  cd rosmobile_core
+  cd mobile_implementation_core
   ./gradlew install
 
 To build the documentation, you may execute the docs task:
@@ -40,7 +40,7 @@ Catkin
 
 It also has a very minimal catkin wrapper that relays build instructions to the
 underlying gradle builder. This lets the repository be easily built and
-deployed alongside other rosmobile repositories in a ros environment. Refer to
+deployed alongside other mobile_implementation_core repositories in a ros environment. Refer to
 the `RosWiki`_ for more information.
 
 
@@ -48,5 +48,5 @@ the `RosWiki`_ for more information.
 .. _rosmake: http://ros.org/wiki/rosmake/
 .. _Maven: http://maven.apache.org/
 .. _gradle wrapper: http://gradle.org/docs/current/userguide/gradle_wrapper.html
-.. _RosWiki: http://wiki.ros.org/rosmobile
+.. _RosWiki: http://wiki.ros.org/mobile_implementation_core
 .. _Package: https://github.com/Application-UI-UX

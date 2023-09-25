@@ -1,10 +1,10 @@
-## RosMobile Core
+## ROS/ROS2 Mobile Core
 
-Updated Version [rosmobile_core](https://github.com/Application-UI-UX/rosmobile_core) readme.
+Updated Version [mobile_implementation_core](https://github.com/Application-UI-UX/mobile_implementation_core) readme.
 
 Old Version [rosjava_core](https://github.com/rosjava/rosjava_core) readme.
 
-This package is a generator of rosmobile message artifacts for core ros messages for mobile
+This package is a generator of mobile_implementation_core message artifacts for core ros messages for mobile
 
 ## Important
 The repository has diverged, as the old commits and codes are under the previous License and
@@ -22,7 +22,7 @@ The package is published in https://github.com/Application-UI-UX
 If you would like to add a message dependency to this list, first consider if it is a worthwhile candidate, these libraries 
 are not trying  to replace existing more so displaying useful information to the user with controls
 
-* It is a direct dependency for rosmobile/android
+* It is a direct dependency for mobile_implementation_core/android
 * It is a popular and stable dependency that will require little maintenance
 * Latest versions are on Application-UI-UX and it is noetic
 
@@ -50,4 +50,4 @@ require a rebuild of this package:
 
 
 ## License
-This SDK is distributed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0), see [LICENSE](https://github.com/Application-UI-UX/rosmobile_build_tools/blob/master/LICENSE) and [NOTICE](https://github.com/Application-UI-UX//blob/master/LICENSE) for more information.
+This SDK is distributed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0), see [LICENSE](https://github.com/Application-UI-UX/mobile_implementation_core_build_tools/blob/master/LICENSE) and [NOTICE](https://github.com/Application-UI-UX//blob/master/LICENSE) for more information.

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="/opt/gradle/latest" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/apache_xmlrpc_client" />
+            <option value="$PROJECT_DIR$/apache_xmlrpc_common" />
+            <option value="$PROJECT_DIR$/apache_xmlrpc_server" />
+            <option value="$PROJECT_DIR$/docs" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_benchmarks" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_geometry" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_helpers" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_test" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_tutorial_pubsub" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_tutorial_right_hand_rule" />
+            <option value="$PROJECT_DIR$/mobile_implementation_core_tutorial_services" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

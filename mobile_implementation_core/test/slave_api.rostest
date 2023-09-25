@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="mobile_implementation_core" type="SlaveApiTestNode" name="test_node" />
+  <test pkg="test_ros" type="test_slave_api.py" test-name="mobile_implementation_core_slave_api" args="--profile=$(find mobile_implementation_core)/test/mobile_implementation_core_profile.yaml" />
+</launch>

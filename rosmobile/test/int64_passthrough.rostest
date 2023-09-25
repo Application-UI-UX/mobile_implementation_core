@@ -1,5 +1,0 @@
-<launch>
-  <node pkg="rosmobile" type="int64_publisher.py" name="node0" />
-  <node pkg="rosmobile" type="PassthroughTestNode" name="rosmobile_node" />
-  <test pkg="rosmobile" type="test_int64_passthrough.py" test-name="int64_passthrough" />
-</launch>

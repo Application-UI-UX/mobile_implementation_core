@@ -1,4 +1,4 @@
 - git:
-    local-name: rosmobile_core
-    uri: https://github.com/rosmobile/rosmobile_core/
+    local-name: mobile_implementation_core
+    uri: https://github.com/mobile_implementation_core/mobile_implementation_core/
     version: hydro-devel
