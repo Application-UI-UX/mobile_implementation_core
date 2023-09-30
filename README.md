@@ -1,7 +1,7 @@
 ## ROS/ROS2 Mobile Core
 
 ### Website
---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 https://application-ui-ux.github.io/mobile_implementation_core
 ---------------------------------------------------------------------------------------
 
@@ -47,6 +47,13 @@ require a rebuild of this package:
 * update the changelog and bump the version number in package.xml
 * tag it with the new version number
 * release
+
+
+# USE CASE
+--------------------------------------------------------------------------------------------------------
+* Every repository within our organization is a valuable resource that can be utilized for educational purposes by individuals who actively contribute to the repository or choose to become sponsors of the organization. For those who wish to use our services conversationally, the acquisition of a license and subscription from our company website is mandatory. This ensures that the services are appropriately compensated for their use. Additionally, for the 90% of services designated as private, acquiring a license and subscription can be facilitated through our company website. We encourage interested parties to visit our website to explore and procure the necessary licenses and subscriptions for the diverse range of services and products we offer. Your support and commitment enable us to maintain and enhance the quality of our offerings, contributing to a thriving collaborative environment.
+--------------------------------------------------------------------------------------------------------
+
 
 ### Maintainer
 * Ronaldson Bellande
