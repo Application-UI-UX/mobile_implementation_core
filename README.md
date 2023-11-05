@@ -6,16 +6,16 @@
 
 
 # Stats
-[![GitHub stars](https://img.shields.io/github/stars/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg?style=social)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg?style=social)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/network)
-[![GitHub watchers](https://img.shields.io/github/watchers/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg?style=social)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/watchers)
+[![GitHub stars](https://img.shields.io/github/stars/Application-UI-UX/mobile_implementation_core.svg?style=social)](https://github.com/Application-UI-UX/mobile_implementation_core/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Application-UI-UX/mobile_implementation_core.svg?style=social)](https://github.com/Application-UI-UX/mobile_implementation_core/network)
+[![GitHub watchers](https://img.shields.io/github/watchers/Application-UI-UX/mobile_implementation_core.svg?style=social)](https://github.com/Application-UI-UX/mobile_implementation_core/watchers)
 
-[![GitHub issues](https://img.shields.io/github/issues/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/issues)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/pulls)
-[![GitHub license](https://img.shields.io/github/license/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/Application-UI-UX/mobile_implementation_core.svg)](https://github.com/Application-UI-UX/mobile_implementation_core/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/Application-UI-UX/mobile_implementation_core.svg)](https://github.com/Application-UI-UX/mobile_implementation_core/pulls)
+[![GitHub license](https://img.shields.io/github/license/Application-UI-UX/mobile_implementation_core.svg)](https://github.com/Application-UI-UX/mobile_implementation_core/blob/main/LICENSE)
 
-[![GitHub last commit](https://img.shields.io/github/last-commit/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/commits)
-[![Visitor & Github Clones](https://img.shields.io/badge/dynamic/json?color=2e8b57&label=Visitor%20%26%20GitHub%20Clones&query=$.count&url=https://api.github.com/repos/Application-UI-UX/mobile_catkin_modules_build_development_tools/traffic)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Application-UI-UX/mobile_implementation_core.svg)](https://github.com/Application-UI-UX/mobile_implementation_core/commits)
+[![Visitor & Github Clones](https://img.shields.io/badge/dynamic/json?color=2e8b57&label=Visitor%20%26%20GitHub%20Clones&query=$.count&url=https://api.github.com/repos/Application-UI-UX/mobile_implementation_core/traffic)](https://github.com/Application-UI-UX/mobile_implementation_core)
 
 
 ### Repository Website
