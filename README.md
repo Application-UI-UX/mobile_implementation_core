@@ -1,8 +1,23 @@
-## ROS/ROS2 Mobile Core
+# ROS/ROS2 Mobile Core
 
 [![Website](https://img.shields.io/badge/Visit%20our-Website-0099cc?style=for-the-badge)](https://https://application-ui-ux.github.io)
 [![Discord](https://img.shields.io/badge/Join%20our-Discord-7289DA?logo=discord&style=for-the-badge)](https://discord.gg/Yc72nd4w)
 [![Sponsor](https://img.shields.io/badge/Sponsor-Application%20UI%20UX%20Research-red?style=for-the-badge&logo=github)](https://github.com/sponsors/Application-UI-UX)
+
+
+# Stats
+[![GitHub stars](https://img.shields.io/github/stars/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg?style=social)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg?style=social)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/network)
+[![GitHub watchers](https://img.shields.io/github/watchers/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg?style=social)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/watchers)
+
+[![GitHub issues](https://img.shields.io/github/issues/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/pulls)
+[![GitHub license](https://img.shields.io/github/license/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/blob/main/LICENSE)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/Application-UI-UX/mobile_catkin_modules_build_development_tools.svg)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools/commits)
+[![Visitor & Github Clones](https://img.shields.io/badge/dynamic/json?color=2e8b57&label=Visitor%20%26%20GitHub%20Clones&query=$.count&url=https://api.github.com/repos/Application-UI-UX/mobile_catkin_modules_build_development_tools/traffic)](https://github.com/Application-UI-UX/mobile_catkin_modules_build_development_tools)
+
+
 ### Repository Website
 ---------------------------------------------------------------------------------------
 https://application-ui-ux.github.io/mobile_implementation_core
